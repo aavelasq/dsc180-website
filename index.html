@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./style.css">
+
+        <title>Twitter Sentiment Analysis</title>
+    </head>
+
+    <body>
+        <div id="header">
+            <!-- <img src="./imgs/fake_ss.png"> -->
+            <h1 id="title-header" class="headers">The Music Industry <br> Versus <br> Public Backlash</h1>
+            <h4 id="subtitle-header" class="headers">How cancel culture affects public sentiment towards musicians over time.</h4>
+            <h5 id="authors" class="headers">By Nikitha Gopal, Abigail Velasquez, Peter Wu</h5>
+        </div>
+        <!-- <nav id="main-nav" class="navbar sticky-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Intro</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#methods">Methods</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#results">Results</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conclusion">Conclusion</a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+        </nav> -->
+        <div id="main" class="container-lg">
+            <div id="intro">
+                <p class="article-text">
+                    In today's social media age, we see trends happen every day. Every so often, 
+                    a public figure or celebrity would trend on social media platforms such as Twitter over behavior that the general public would consider offensive or socially unacceptable by today’s standards. 
+                    From politics to Hollywood to the music industry, all kinds of public figures have been called out and criticized for such behavior by the masses. 
+                    This form of ​​modern ostracism is known as “cancel culture”, in which the masses attempt to call out and boycott an individual in response to problematic remarks or ideologies that they have expressed. 
+                </p>
+                <h2 class="sub-headers article-text">The Data</h2>
+                <p class="article-text">
+                    For our analysis, we focused on three different genres of music: K-Pop, Hip-Hop, and Pop. We then selected
+                    two cancelled individuals, one male and one female, and two individuals who have not been cancelled, also being one
+                    male and one female, to act as our controls for each genre. 
+                    
+                </p>
+                <div id="intro-celeb-viz">
+                    <div id="intro-kpop">
+                        <div id="cancel-kpop" class="row">
+                            <h3>K-Pop</h3>
+                            <h5>Cancelled Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/kb_lc.jpeg">
+                                <h5>Lucas (NCT)</h5>
+                                <p><b>Follower Count:</b> 2M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Sexual Abuse Allegations
+                                </p>
+                                <span class="tooltiptext left-tooltip">After allegations from former girlfriends of gaslighting and cheating, Lucas was called out and apologized for such behavior soon after the allegations. As of February 2022, Lucas still remains on hiatus from participating in any activities.</span>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/giselle.jpeg">
+                                <h5>Giselle (Aespa)</h5>
+                                <p><b>Follower Count:</b> 2.1M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Lipsyncing the N word
+                                </p>
+                                <span class="tooltiptext right-tooltip">Giselle was called out on Twitter for lip-syncing a racial slur from American R&B artist SZA’s track “Love Galore” in a behind-the-scenes video. Giselle publicly apologized a few days after the incident occured.</span>
+                            </div>
+                        </div>
+                        <div id="control-kpop" class="row control-viz1-img">
+                            <h5>Control Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/jaemin.jpeg">
+                                <h5>Jaemin (NCT)</h5>
+                                <p><b>Follower Count:</b> 6.8M
+                                </p>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/ryujin.jpeg">
+                                <h5>Ryujin (ITZY)</h5>
+                                <p><b>Follower Count:</b> 4.4M
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="intro-hiphop">
+                        <div id="cancel-hiphop" class="row">
+                            <h3>Hip-Hop</h3>
+                            <h5>Cancelled Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/dababy.jpeg">
+                                <h5>DaBaby</h5>
+                                <p><b>Follower Count:</b> 4.4M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Homophobic Remarks
+                                </p>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/nicki.jpeg">
+                                <h5>Nicki Minaj</h5>
+                                <p><b>Follower Count:</b> 23.7M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Spreading COVID-19 <br> Vaccine Misinformation
+                                </p>
+                            </div>
+                        </div>
+                        <div id="control-hiphop" class="row control-viz1-img">
+                            <h5>Control Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/lilbaby.jpeg">
+                                <h5>Lil Baby</h5>
+                                <p><b>Follower Count:</b> 6.2M
+                                </p>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/saweetie.jpeg">
+                                <h5>Saweetie</h5>
+                                <p><b>Follower Count:</b> 2M
+                            </div>
+                        </div>
+                    </div>
+                    <div id="intro-pop">
+                        <div id="cancel-pop" class="row">
+                            <h3>Pop</h3>
+                            <h5>Cancelled Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/zayn.jpeg">
+                                <h5>Zayn Malik</h5>
+                                <p><b>Follower Count:</b> 31M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Physical Abuse Allegations
+                                </p>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/doja.jpeg">
+                                <h5>Doja Cat</h5>
+                                <p><b>Follower Count:</b> 4.3M
+                                    <br>
+                                    <b>Reason for Cancellation:</b> 
+                                    <br>
+                                    Racism Allegations
+                                </p>
+                            </div>
+                        </div>
+                        <div id="control-pop" class="row control-viz1-img">
+                            <h5>Control Artists</h5>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/harry.jpeg">
+                                <h5>Harry Styles</h5>
+                                <p><b>Follower Count:</b> 37.4M
+                                </p>
+                            </div>
+                            <div class="celeb-img-container">
+                                <img src="./imgs/adele.png">
+                                <h5>Adele</h5>
+                                <p><b>Follower Count:</b> 27.2M
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="article-text">
+                    Our data on these 12 individuals was collected using the Twitter API, in which we ran queries for each individual
+                    that consisted of a set of hashtags and keywords that were related to the individual's cancellation, name, and/or fanbase. 
+                </p>
+            </div>
+            <div id="methods">
+                <h2 class="sub-headers article-text">Methods</h2>
+                <p class="article-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+                </p>
+            </div>
+            <div id="results">
+                <h2 class="sub-headers article-text">Results</h2>
+                <p class="article-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+                    <br>
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
+                    <br>
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
+                </p>
+            </div>
+            <div id="conclusion">
+                <h2 class="sub-headers article-text">Conclusion</h2>
+                <p class="article-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+                </p>
+            </div>
+        </div>
+    </body>
+
+</html>
