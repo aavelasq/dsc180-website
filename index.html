@@ -9,24 +9,32 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300:400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="./style.css">
+
+        <!-- script  -->
+        <script src="./script.js"></script>
 
         <title>Twitter Sentiment Analysis</title>
     </head>
 
     <body>
         <div id="header">
-            <!-- <img src="./imgs/fake_ss.png"> -->
-            <h1 id="title-header" class="headers">The Music Industry <br> Versus <br> Public Backlash</h1>
-            <h4 id="subtitle-header" class="headers">How cancel culture affects public sentiment towards musicians over time.</h4>
-            <h5 id="authors" class="headers">By Nikitha Gopal, Abigail Velasquez, Peter Wu</h5>
+            <!-- <img src="./imgs/header.jpeg"> -->
+            <div id="title-container">
+                <h1 id="title-header" class="headers">The Music Industry <br> Versus <br> <span>Public Backlash</span></h1>
+                <h4 id="subtitle-header" class="headers">How cancel culture affects public sentiment towards musicians over time.</h4>
+                <h5 id="authors" class="headers">By Nikitha Gopal, Abigail Velasquez, Peter Wu</h5>
+            </div>
         </div>
         <!-- <nav id="main-nav" class="navbar sticky-top navbar-expand-lg navbar-dark">
             <div class="container-fluid">
@@ -73,8 +81,13 @@
                             <h5>Cancelled Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/kb_lc.jpeg">
-                                <h5>Lucas (NCT)</h5>
-                                <p><b>Follower Count:</b> 2M
+                                <h5>Lucas</h5>
+                                <p>
+                                    <b>Group:</b> NCT/WayV
+                                    <br>
+                                    <b>Follower Count:</b> 2M
+                                    <br>
+                                    <b>Date Cancelled:</b> 8/24/21
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -84,8 +97,13 @@
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/giselle.jpeg">
-                                <h5>Giselle (Aespa)</h5>
-                                <p><b>Follower Count:</b> 2.1M
+                                <h5>Giselle</h5>
+                                <p>
+                                    <b>Group:</b> Aespa
+                                    <br>
+                                    <b>Follower Count:</b> 2.1M
+                                    <br>
+                                    <b>Date Cancelled:</b> 10/23/21
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -98,14 +116,20 @@
                             <h5>Control Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/jaemin.jpeg">
-                                <h5>Jaemin (NCT)</h5>
-                                <p><b>Follower Count:</b> 6.8M
+                                <h5>Jaemin</h5>
+                                <p>
+                                    <b>Group:</b> NCT/NCT Dream
+                                    <br>
+                                    <b>Follower Count:</b> 6.8M
                                 </p>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/ryujin.jpeg">
-                                <h5>Ryujin (ITZY)</h5>
-                                <p><b>Follower Count:</b> 4.4M
+                                <h5>Ryujin</h5>
+                                <p>
+                                    <b>Group:</b> ITZY
+                                    <br>
+                                    <b>Follower Count:</b> 4.4M
                                 </p>
                             </div>
                         </div>
@@ -119,20 +143,26 @@
                                 <h5>DaBaby</h5>
                                 <p><b>Follower Count:</b> 4.4M
                                     <br>
+                                    <b>Date Cancelled:</b> 8/24/21
+                                    <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
                                     Homophobic Remarks
                                 </p>
+                                <span class="tooltiptext left-tooltip">During a music festival in July 2021, DaBaby made some remarks to the crowd that were homophobic. After that concert, the controversy went mainstream while many festivals and brands dropped DaBaby.</span>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/nicki.jpeg">
                                 <h5>Nicki Minaj</h5>
                                 <p><b>Follower Count:</b> 23.7M
                                     <br>
+                                    <b>Date Cancelled:</b> 8/24/21
+                                    <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
-                                    Spreading COVID-19 <br> Vaccine Misinformation
+                                    COVID-19 Misinformation
                                 </p>
+                                <span class="tooltiptext right-tooltip">Nicki faced backlash after she tweeted vaccine misinformation based on what supposedly happened to her cousin in Trinidad after getting the vaccine. This occurred in September 2021 during the ongoing COVID-19 pandemic affecting many around the world.</span>
                             </div>
                         </div>
                         <div id="control-hiphop" class="row control-viz1-img">
@@ -159,20 +189,26 @@
                                 <h5>Zayn Malik</h5>
                                 <p><b>Follower Count:</b> 31M
                                     <br>
+                                    <b>Date Cancelled:</b> 8/24/21
+                                    <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
                                     Physical Abuse Allegations
                                 </p>
+                                <span class="tooltiptext left-tooltip">Zayn faced some backlash due to physical assault allegations made by his mother-in-law, Yolanda Hadid, and was reported for domestic violence. As a result, Zayn was required to pay fines, complete 90 day probation, and attend anger management classes.</span>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/doja.jpeg">
                                 <h5>Doja Cat</h5>
                                 <p><b>Follower Count:</b> 4.3M
                                     <br>
+                                    <b>Date Cancelled:</b> 8/24/21
+                                    <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
                                     Racism Allegations
                                 </p>
+                                <span class="tooltiptext right-tooltip">Doja Cat was called out for racist allegations following the resurfacing of her song "Dindu Nuffin", titled after a racial slur, and allegedly contributing to racist conversations on online chatrooms. In response, Doja Cat apologized in a now deleted Instagram post.</span>
                             </div>
                         </div>
                         <div id="control-pop" class="row control-viz1-img">
@@ -194,25 +230,226 @@
                 </div>
                 <p class="article-text">
                     Our data on these 12 individuals was collected using the Twitter API, in which we ran queries for each individual
-                    that consisted of a set of hashtags and keywords that were related to the individual's cancellation, name, and/or fanbase. 
+                    that consisted of a set of hashtags and keywords that were related to the individual's cancellation, name, and fanbase. 
                 </p>
+                <div id="intro-data-viz">
+                    <div id="data-tables">
+                        <h4>Cancelled Artists Dataset Overview</h4>
+                        <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Artist</th>
+                                  <th scope="col">Initial # of Tweets</th>
+                                  <th scope="col">Hashtags & Keywords Used for Query</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="artists">Lucas</td>
+                                    <td class="tweet-num">110,000+</td>
+                                    <td>"lucas", “bubble”,“bbl”, “scandal", "xuxi", "yukhei", "nct","czennie", "czennies", "nctzen", "lumis", "weishennie", "nctzens", "weishennies", "wayv", "weishenv", "ot23", "ot22", "ot6", "ot7", "#NCT", "#LUCAS", "#WayV", "WeiShenV", "#WELOVEYOULUCAS", "#LUCAS_OUT", "#WAYV_is_7", "#LUCASBESTBOY", "#WayVis7", "#LUCAS_GETS_OUT_OF_NCT", "#LUCAS_GETS_OUT_OF_WayV"</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Giselle</td>
+                                    <td class="tweet-num">35,000+</td>
+                                    <td>"giselle", "uchinaga", "kpop", "k-pop", "bbl", "bubble”, "MYs", "MY", "aeri", "n word", "racist", "aespa", "#aespa", "#gisellenword", "giselleaespa", "#Giselle_OUT", "#gisellenwordspace", "#giselleapologize", "#aespa_is_FOUR" </td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Dababy</td>
+                                    <td class="tweet-num">100,000+</td>
+                                    <td>"dababy", #DaBabyisOverParty, #DaBookings, #DaApology, #Dababy</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Nicki Minaj</td>
+                                    <td class="tweet-num">90,000+</td>
+                                    <td>"nicki minaj, #NickiMinaj, #Nicki, #MyCousinTookTheVaccine, #NickiMinajsCousinsFriendsBalls, #NickisCousinsFriendsBalls, #nickiminajdraggingparty, #iStandWithNicki, #istandwithnickiminaj, #barbz, barbz</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Zayn Malik</td>
+                                    <td class="tweet-num">50,000+</td>
+                                    <td>“zayn malik”, “zayn”, “zayn hits yolanda”, “zayn and gigi”, “zayn malik and gigi hadid”, “zayn cheated”, #WeAreWithZayn, #ZaynMalik, #FreeZayn, #welovezayn, #AlwaysWithYouZayn, #respectzayn, #WeSupportZayn, #cancelzayn, #WeHateZayn</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Doja Cat</td>
+                                    <td class="tweet-num">380,000+</td>
+                                    <td>“doja cat”, “doja”, “dindu nuffin song”, #dojawasinnocent, #dojacatisNOToverparty, “WeAreSorryDoja”, #dojacatisoverparty, #DojaIsOverParty, #DojaCat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Control Artists Dataset Overview</h4>
+                        <table id="control-artists" class="table table-sm table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                  <th scope="col">Artist</th>
+                                  <th scope="col">Initial # of Tweets</th>
+                                  <th scope="col">Hashtags & Keywords Used for Query</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="artists">Jaemin</td>
+                                    <td class="tweet-num">100,000</td>
+                                    <td>"na jaemin", "jaemin", “bbl”, “bubble”, “nct”, “nct dream”, “nana”, “nctzens”, "czennie", "czennies", "nctzen", “#NCT”, “#NCTDREAM”</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Ryujin</td>
+                                    <td class="tweet-num">100,000</td>
+                                    <td>"ryujin", "shin", "itzy", "#ITZY", "midzy", "midzys", "#RYUJIN"</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Lil Baby</td>
+                                    <td class="tweet-num">140,000+</td>
+                                    <td>“lil baby”, “#lilbaby”</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Saweetie</td>
+                                    <td class="tweet-num">70,000+</td>
+                                    <td>'"saweetie" , “#saweetie”</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Harry Styles</td>
+                                    <td class="tweet-num">430,000+</td>
+                                    <td>“harry styles”, “harry”, “styles”, #harry, #harrystyles</td>
+                                </tr>
+                                <tr>
+                                    <td class="artists">Adele</td>
+                                    <td class="tweet-num">34,000+</td>
+                                    <td>“adele”, #adele, #adele25, #adele21, #adelelove</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div id="methods">
                 <h2 class="sub-headers article-text">Methods</h2>
+                <h3 class="topic-headers article-text">Type of Cancellation</h3>
                 <p class="article-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <h3 class="topic-headers article-text">Background of Cancelled Artist</h3>
+                <p class="article-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <h3 class="topic-headers article-text">Parasocial Relationships</h3>
+                <p class="article-text">
+                    Parasocial relationships are one-sided relationships in which an individual develops illusions of intimacy or friendship with another individual, usually a media personality, as a result of repeated interactions between the individual and the media personality. Depending on the strength of the relationship, media personalities can have strong influence over their audiences as evident with fandoms or fan bases like BTS’s ARMYs or Taylor Swift’s Swifties.
+                </p>
+                <div id="fandom-viz">
+                    <h4 style="text-align:center">Fandom Names By Artist</h4>
+                    <div id="legend" class="row legend">
+                        <h5 class="legend">Select a Genre</h5>
+                        <button id="btn-all" type="button" class="legend btn btn-outline-dark active">
+                            All
+                        </button>
+                        <button id="btn-kpop" type="button" class="legend btn btn-outline-dark">
+                            K-Pop
+                        </button>
+                        <button id="btn-hh" type="button" class="legend btn btn-outline-dark">
+                            Hip-Hop
+                        </button>
+                        <button id="btn-pop" type="button" class="legend btn btn-outline-dark">
+                            Pop
+                        </button>
+                    </div>
+                    <div id="legend" class="row legend">
+                        <h5 class="legend">By Strength</h5>
+                        <button id="btn-all2" type="button" class="legend btn btn-outline-dark active">
+                            All
+                        </button>
+                        <button id="btn-strength" type="button" class="legend btn btn-outline-dark">
+                            Strong vs. Weak
+                        </button>
+                    </div>
+                    <div id="first-row" class="row">
+                        <div class="indiv-box fandom-kpop fandom-strong">
+                            <img src="./imgs/kb_lc.jpeg">
+                            <h5>LUCAS</h5>
+                            <p>weishennies; NCTzens; <br> lumis; czeenies</p>
+                        </div>
+                        <div class="indiv-box fandom-kpop fandom-strong">
+                            <img src="./imgs/giselle.jpeg">
+                            <h5>GISELLE</h5>
+                            <p>MYs; aerishines</p>
+                        </div>
+                        <div class="indiv-box fandom-kpop fandom-strong">
+                            <img src="./imgs/jaemin.jpeg">
+                            <h5>JAEMIN</h5>
+                            <p>NCTzens; czeenies;<br>nanadoongies</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="indiv-box fandom-kpop fandom-strong">
+                            <img src="./imgs/ryujin.jpeg">
+                            <h5>RYUJIN</h5>
+                            <p>MIDZYs</p>
+                        </div>
+                        <div class="indiv-box fandom-hh fandom-strong">
+                            <img src="./imgs/nicki.jpeg">
+                            <h5>NICKI<br>MINAJ</h5>
+                            <p>barbz</p>
+                        </div>
+                        <div class="indiv-box fandom-pop fandom-weak">
+                            <img src="./imgs/zayn.jpeg">
+                            <h5>ZAYN<br>MALIK</h5>
+                            <p>directioners; zquad</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="indiv-box fandom-pop fandom-weak">
+                            <img src="./imgs/doja.jpeg">
+                            <h5>DOJA CAT</h5>
+                            <p>kittenz</p>
+                        </div>
+                        <div class="indiv-box fandom-pop fandom-weak">
+                            <img src="./imgs/harry.jpeg">
+                            <h5>HARRY STYLES</h5>
+                            <p>directioners; harries</p>
+                        </div>
+                        <div class="indiv-box fandom-pop fandom-weak">
+                            <img src="./imgs/adele.png">
+                            <h5>ADELE</h5>
+                            <p>daydreamers</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="article-text">
+                    To determine which artists have fan bases that share either a strong or weak parasocial relationship with the artist, we used two metrics based on the artist's tweet engagement ratio and the ratio of tweets mentioning their fandom. 
+                    Based on those ratios, we then grouped our artists into those with either strong or weak parasocial fan bases.
                 </p>
             </div>
             <div id="results">
                 <h2 class="sub-headers article-text">Results</h2>
+                <h3 class="topic-headers article-text">Type of Cancellation</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
-                    <br>
-                    <br>
+                </p>
+                <div id="type-plot-viz" class="chart-container">
+                    <div id="type-charts">
+                        <div id="type-toxic" class="type-line"></div>
+                        <div id="type-vader" class="type-line"></div>
+                    </div>
+                </div>
+                <h3 class="topic-headers article-text">Background of Cancelled Artist</h3>
+                <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
+                </p>
+                <div id="bg-plot-viz" class="chart-container">
+                    <div id="bg-charts">
+                        <div id="bg-toxic" class="type-line"></div>
+                        <div id="bg-insult" class="type-line"></div>
+                        <div id="bg-vader1" class="type-line"></div>
+                        <div id="bg-vader2" class="type-line"></div>
+                    </div>
+                    <figure class="sticky">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. <br><br> Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan.
+                        </p>
+                    </figure>
+                </div>
+                <h3 class="topic-headers article-text">Parasocial Relationships</h3>
+                <p class="article-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
                 </p>
             </div>
             <div id="conclusion">
