@@ -7,13 +7,14 @@ div#header {
     background-color:rgb(10, 10, 10);
     background-image: url("./imgs/header2.png");
     background-size: contain;
-    padding-top: 18vh;
+    padding-top: 15vh;
     padding-bottom: 5vh;
+    border-bottom: 10px solid #343f63;
 }
 
 div#header #title-header {
-    font-size: 7.8vw;
-    color: rgb(177, 187, 231);
+    font-size: 7.5vw;
+    color: rgb(190, 197, 233);
     font-family: 'Bebas Neue', sans-serif;
 }
 
@@ -72,22 +73,20 @@ div#header .headers {
 }
 
 body div#main {
-    width: auto;
-    padding-top: 5vh;
-    padding-bottom: 10vh;
+    padding: 5vh 0;
 }
 
 @media (max-width: 1000px) {
     /* moblie devices */
     .article-text {
-       margin-left: 0;
-       margin-right: 0;
+       margin-left: 2%;
+       margin-right: 2%;
     }
 }
 
 @media (min-width: 1200px) {
     .article-text {
-        margin: 0 12vw;
+        margin: 0 20%;
     }
 }
 
@@ -95,14 +94,13 @@ p.article-text {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: rgb(0, 0, 0);
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: 300;
-    line-height: 2;
-    text-indent: 3em;
+    line-height: 1.8;
 }
 
 .sub-headers {
-    color: rgb(50, 69, 150);
+    color: #374886;
     text-align: left;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -112,8 +110,27 @@ p.article-text {
 }
 
 .topic-headers {
-    color: rgb(88, 104, 172);
+    color: #6176bb;
     padding: 10px 0;
+}
+
+.viz-headers {
+    font-family: 'Roboto', sans-serif;
+}
+
+h4.viz-headers {
+    padding: 12px 0;
+    color:rgb(18, 33, 66);
+    text-align: center;
+}
+
+a {
+    color: rgb(110, 108, 190);
+}
+
+a:hover {
+    color: rgb(53, 52, 90);
+    font-weight: 400;
 }
 
 /* visualization for intro cancelled individuals + controls  */
@@ -142,25 +159,25 @@ div#intro-celeb-viz div.celeb-img-container {
     display: inline-block;
     margin: 10px;
     padding: 12px; 
-    background-color: #37375f;
+    background-color: #343f63;
     border-radius: 5%;
-    border: 1px solid rgb(105, 105, 105);
     transition: background-color 0.5s;
 }
 
 div#intro-celeb-viz div.celeb-img-container:hover {
-    background-color: #47528f;
+    background-color: #5567a3;
+    box-shadow: 4px 4px 4px rgb(107, 107, 107);
 }
 
 div#intro-celeb-viz img {
-    width: 11vh;
+    width: 85px;
     height: auto;
     border-radius: 50%;
     border: 2px solid white;
 }
 
 div#intro-celeb-viz div.control-viz1-img img {
-    width: 9vh;
+    width: 65px;
     height: auto;
 }
 
@@ -168,7 +185,7 @@ div#intro-celeb-viz div.control-viz1-img img {
 div#intro-celeb-viz div.celeb-img-container .tooltiptext {
     visibility: hidden;
     width: 240px;
-    background-color: #383855;
+    background-color: #343f63;
     font-size: 0.9em;
     color: #fff;
     text-align: center;
@@ -200,7 +217,7 @@ div#intro-celeb-viz div.celeb-img-container:hover .tooltiptext {
 }
 
 div#intro-celeb-viz h3 {
-    color:rgb(59, 82, 184);
+    color: #5567a3;
 }
 
 div#intro-celeb-viz h5 {
@@ -208,13 +225,13 @@ div#intro-celeb-viz h5 {
 }
 
 div#intro-celeb-viz div.celeb-img-container h5 {
-    color:rgb(198, 221, 255);
+    color:rgb(230, 240, 255);
     padding-top: 5px;
 }
 
 div#intro-celeb-viz div.celeb-img-container p {
     text-align: center;
-    font-size: 0.85em;
+    font-size: 0.8em;
     color: rgb(238, 238, 238);
 }
 
@@ -230,7 +247,7 @@ div#intro-data-viz div#data-tables {
 }
 
 div#intro-data-viz table {
-    background-color: #37375f;
+    background-color: #343f63;
 }
 
 div#intro-data-viz th {
@@ -239,7 +256,7 @@ div#intro-data-viz th {
 }
 
 div#intro-data-viz tr:hover {
-    background-color: #515196;
+    background-color: #5567a3;
 }
 
 div#intro-data-viz td.artists {
@@ -275,10 +292,6 @@ div#fandom-viz .row {
     justify-content: center;
 }
 
-div#fandom-viz div#first-row {
-    padding-top: 10px;
-}
-
 div#fandom-viz .legend {
     display: inline;
     justify-content: center;
@@ -286,7 +299,7 @@ div#fandom-viz .legend {
 
 div#fandom-viz div#legend h5 {
     padding-left: 33%;
-    color: #3a2d69;
+    color: #343f63;
 }
 
 div#fandom-viz div#legend button {
@@ -301,19 +314,41 @@ div#fandom-viz div#legend button:hover,
 div#fandom-viz div#legend button:active,
 div#fandom-viz div#legend button.active {
     /* changes background color of button */
-    background-color: #37375f;
+    background-color: #343f63;
+}
+
+div#fandom-viz h5 {
+    text-align: center;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+
+div#fandom-viz h5#fandom-strong-header {
+    color: #343f63;
+}
+
+div#fandom-viz h5#fandom-weak-header {
+    color: #5567a3;
 }
 
 div#fandom-viz div.indiv-box {
     width: 200px;
-    height: 130px;
+    height: 125px;
     position: relative;
     margin: 2px;
-    padding: 15px;
+    padding: 12px;
     display: inline-block;
-    background-color: #37375f;
+    border-radius: 5%;
     transition: 0.5s;
 }
+
+div#fandom-viz div.fandom-strong {
+    background-color: #343f63;
+} 
+
+div#fandom-viz div.fandom-weak {
+    background-color: #5567a3;
+} 
 
 div#fandom-viz div.indiv-box img {
     width: 65px;
@@ -324,8 +359,9 @@ div#fandom-viz div.indiv-box img {
 }
 
 div#fandom-viz div.indiv-box h5 {
+    text-align: left;
     padding-top: 5px;
-    color: rgb(195, 221, 255);
+    color: rgb(230, 240, 255);
     font-size: 1.2em;
 }
 
@@ -342,11 +378,10 @@ div#results div.chart-container {
 
 /* type viz */
 div#type-charts {
-    background-color: #37375f;
+    background-color: #343f63;
     margin: 0 80px;
     padding-left: 2%;
     padding-top: 10px;
-    display: flex;
 }
 
 /* background viz */
@@ -358,6 +393,10 @@ div#bg-plot-viz {
 }
 
 @media (min-width: 1000px) {
+    div#type-charts { 
+        display: flex;
+    }
+
     div#bg-plot-viz {
         flex-direction: row;
     }
@@ -368,9 +407,8 @@ div#bg-plot-viz > * {
 }
 
 div#bg-charts {
-    background-color: #37375f;
-    width: 600px;
-    margin-left: 50px;
+    background-color: #343f63;
+    width: auto;
     padding-left: 2%;
 }
 
@@ -378,13 +416,12 @@ figure.sticky {
     align-items: center;
     align-self: flex-start;
     display: flex;
-    margin: 0;
-    margin-bottom: 5%;
+    margin: 1% 0;
     padding: 10px;
     top: 15%;
     left: 0;
-    background-color: #37375f;
-    margin-left: 100px;
+    background-color: #343f63;
+    margin-left: 50px;
     max-width: 40%;
     height: auto;
 }
@@ -398,7 +435,36 @@ figure.sticky {
 figure.sticky p {
     padding: 15px;
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+
+div#methodology {
+    padding-top: 1vh;
+    padding-bottom: 10vh;
+    background-color: rgb(15, 15, 15);
+}
+
+@media (max-width: 1000px) {
+    /* moblie devices */
+    div#methodology .article-text {
+       margin-left: 2%;
+       margin-right: 2%;
+    }
+}
+
+@media (min-width: 1200px) {
+    div#methodology .article-text {
+        margin: 0 25%;
+    }
+}
+
+div#methodology h2 {
+    color: rgb(190, 197, 233);
+}
+
+div#methodology p {
+    font-size: 0.9em;
+    color: white;
 }

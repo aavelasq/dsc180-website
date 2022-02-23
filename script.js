@@ -1,7 +1,7 @@
-var fandom_list_kpop, fandom_list_hh, fandom_list_pop, 
-    fandom_list_strong, fandom_list_weak;
-var allBut, kpopBut, hhBut, popBut, allBut2, streBut;
+var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
+var allBut, kpopBut, hhBut, popBut;
 var lucasDataBut;
+var opacityLvl = 0.55;
 
 // fandom viz
 
@@ -10,24 +10,19 @@ function changefandomOpacityAll() {
     kpopBut.classList.remove("active");
     hhBut.classList.remove("active");
     popBut.classList.remove("active");
-    allBut2.classList.add("active");
-    streBut.classList.remove("active");
 
     for (var i = 0; i < fandom_list_kpop.length; i++) {
         var currentImg = fandom_list_kpop[i];
-        currentImg.style.backgroundColor = "#37375f";
         currentImg.style.opacity = 1;
     }
 
     for (var i = 0; i < fandom_list_hh.length; i++) {
         var currentImg = fandom_list_hh[i];
-        currentImg.style.backgroundColor = "#37375f";
         currentImg.style.opacity = 1;
     }
 
     for (var i = 0; i < fandom_list_pop.length; i++) {
         var currentImg = fandom_list_pop[i];
-        currentImg.style.backgroundColor = "#37375f";
         currentImg.style.opacity = 1;
     }
 }
@@ -45,12 +40,12 @@ function changefandomOpacityKpop() {
 
     for (var i = 0; i < fandom_list_hh.length; i++) {
         var currentImg = fandom_list_hh[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 
     for (var i = 0; i < fandom_list_pop.length; i++) {
         var currentImg = fandom_list_pop[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 }
 
@@ -62,7 +57,7 @@ function changefandomOpacityHiphop() {
 
     for (var i = 0; i < fandom_list_kpop.length; i++) {
         var currentImg = fandom_list_kpop[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 
     for (var i = 0; i < fandom_list_hh.length; i++) {
@@ -72,7 +67,7 @@ function changefandomOpacityHiphop() {
 
     for (var i = 0; i < fandom_list_pop.length; i++) {
         var currentImg = fandom_list_pop[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 }
 
@@ -84,12 +79,12 @@ function changefandomOpacityPop() {
 
     for (var i = 0; i < fandom_list_kpop.length; i++) {
         var currentImg = fandom_list_kpop[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 
     for (var i = 0; i < fandom_list_hh.length; i++) {
         var currentImg = fandom_list_hh[i];
-        currentImg.style.opacity = 0.5;
+        currentImg.style.opacity = opacityLvl;
     }
 
     for (var i = 0; i < fandom_list_pop.length; i++) {
@@ -98,26 +93,13 @@ function changefandomOpacityPop() {
     }
 }
 
-function changefandomOpacityStrength() {
-    allBut2.classList.remove("active");
-    streBut.classList.add("active");
-
-    for (var i = 0; i < fandom_list_strong.length; i++) {
-        var currentImg = fandom_list_strong[i];
-        currentImg.style.backgroundColor = "#37375f";
-    }
-
-    for (var i = 0; i < fandom_list_weak.length; i++) {
-        var currentImg = fandom_list_weak[i];
-        currentImg.style.backgroundColor = "#5a698d";
-    }
-}
-
 function drawBGLineToxic() {
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
     // set the dimensions and margins of the graph
     const margin = {top: 30, right: 30, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
-        height = 350 - margin.top - margin.bottom;
+        width = (windowWidth/2) - margin.left - margin.right,
+        height = (windowHeight - 200) - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#bg-toxic")
@@ -225,6 +207,7 @@ function drawBGLineToxic() {
 }
 
 function drawBGLineInsult() {
+    let windowWidth = window.innerWidth;
     // set the dimensions and margins of the graph
     const margin = {top: 30, right: 30, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
@@ -327,7 +310,7 @@ function drawBGLineInsult() {
 
 function drawBGLineVader1() {
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
+    const margin = {top: 30, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
@@ -425,9 +408,10 @@ function drawBGLineVader1() {
             .style("alignment-baseline", "middle")
             .style("font-size", "1em");
 }
+
 function drawBGLineVader2() {
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
+    const margin = {top: 30, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
@@ -528,7 +512,7 @@ function drawBGLineVader2() {
 
 function drawPSLineToxic() {
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
+    const margin = {top: 30, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 450 - margin.top - margin.bottom;
 
@@ -637,7 +621,7 @@ function drawPSLineToxic() {
 
 function drawPSLineInsult() {
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
+    const margin = {top: 30, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 450 - margin.top - margin.bottom;
 
@@ -749,22 +733,16 @@ function init() {
     fandom_list_kpop = document.querySelectorAll("div.fandom-kpop");
     fandom_list_hh = document.querySelectorAll("div.fandom-hh");
     fandom_list_pop = document.querySelectorAll("div.fandom-pop");
-    fandom_list_strong = document.querySelectorAll("div.fandom-strong");
-    fandom_list_weak = document.querySelectorAll("div.fandom-weak");
 
     allBut = document.getElementById("btn-all");
     kpopBut = document.getElementById("btn-kpop");
     hhBut = document.getElementById("btn-hh");
     popBut = document.getElementById("btn-pop");
-    allBut2 = document.getElementById("btn-all2");
-    streBut = document.getElementById("btn-strength");
 
     allBut.addEventListener("click", changefandomOpacityAll);
     kpopBut.addEventListener("click", changefandomOpacityKpop);
     hhBut.addEventListener("click", changefandomOpacityHiphop);
     popBut.addEventListener("click", changefandomOpacityPop);
-    allBut2.addEventListener("click", changefandomOpacityAll);
-    streBut.addEventListener("click", changefandomOpacityStrength);
 
     drawBGLineToxic();
     drawBGLineInsult();

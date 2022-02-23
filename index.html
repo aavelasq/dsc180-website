@@ -16,15 +16,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300:400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css">
 
         <!-- script  -->
         <script src="./script.js"></script>
 
-        <title>Twitter Sentiment Analysis</title>
+        <title>Musicians vs. Public Backlash</title>
     </head>
 
     <body>
@@ -32,7 +31,7 @@
             <!-- <img src="./imgs/header.jpeg"> -->
             <div id="title-container">
                 <h1 id="title-header" class="headers">The Music Industry <br> Versus <br> <span>Public Backlash</span></h1>
-                <h4 id="subtitle-header" class="headers">How cancel culture affects public sentiment towards musicians over time.</h4>
+                <h4 id="subtitle-header" class="headers">How cancel culture affects public sentiment towards musicians over time</h4>
                 <h5 id="authors" class="headers">By Nikitha Gopal, Abigail Velasquez, Peter Wu</h5>
             </div>
         </div>
@@ -63,9 +62,20 @@
             <div id="intro">
                 <p class="article-text">
                     In today's social media age, we see trends happen every day. Every so often, 
-                    a public figure or celebrity would trend on social media platforms such as Twitter over behavior that the general public would consider offensive or socially unacceptable by today’s standards. 
-                    From politics to Hollywood to the music industry, all kinds of public figures have been called out and criticized for such behavior by the masses. 
+                    a celebrity would trend on social media platforms such as Twitter over behavior that the general public would consider offensive or socially unacceptable by today’s standards. 
+                    From politics to Hollywood, all kinds of public figures have been called out and criticized for such behavior by the masses. 
                     This form of ​​modern ostracism is known as “cancel culture”, in which the masses attempt to call out and boycott an individual in response to problematic remarks or ideologies that they have expressed. 
+                    In particular, the music industry is no stranger to cancel culture as countless musicians such as 
+                    <a href="https://www.buzzfeednews.com/article/stephaniesoteriou/travis-scott-no-remorse-astroworld-tragedy-kanye-west">Travis Scott</a> or 
+                    <a href="https://www.vulture.com/article/lana-del-rey-cancelled-timeline.html">Lana Del Rey</a>
+                    have trended in the past over controversies. 
+                </p>
+                <br>
+                <p class="article-text">
+                    With this in mind, we wondered: how does sentiment towards musicians among English-speaking Twitter users change over time due to getting canceled?
+                    To answer this question, we analyzed how the type of issue the individual was cancelled for, 
+                    the background of the individual, and the strength of the individual's parasocial relationship with their fans affected 
+                    public sentiment over time. 
                 </p>
                 <h2 class="sub-headers article-text">The Data</h2>
                 <p class="article-text">
@@ -75,13 +85,14 @@
                     
                 </p>
                 <div id="intro-celeb-viz">
+                    <h4 class="viz-headers">Introducing the Artists...</h4>
                     <div id="intro-kpop">
                         <div id="cancel-kpop" class="row">
-                            <h3>K-Pop</h3>
-                            <h5>Cancelled Artists</h5>
+                            <h3 class="viz-headers">K-Pop</h3>
+                            <h5 class="viz-headers">Cancelled Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/kb_lc.jpeg">
-                                <h5>Lucas</h5>
+                                <h5 class="viz-headers">Lucas</h5>
                                 <p>
                                     <b>Group:</b> NCT/WayV
                                     <br>
@@ -97,11 +108,11 @@
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/giselle.jpeg">
-                                <h5>Giselle</h5>
+                                <h5 class="viz-headers">Giselle</h5>
                                 <p>
                                     <b>Group:</b> Aespa
                                     <br>
-                                    <b>Follower Count:</b> 2.1M
+                                    <b>Follower Count:</b> 2.2M
                                     <br>
                                     <b>Date Cancelled:</b> 10/23/21
                                     <br>
@@ -113,37 +124,37 @@
                             </div>
                         </div>
                         <div id="control-kpop" class="row control-viz1-img">
-                            <h5>Control Artists</h5>
+                            <h5 class="viz-headers">Control Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/jaemin.jpeg">
-                                <h5>Jaemin</h5>
+                                <h5 class="viz-headers">Jaemin</h5>
                                 <p>
                                     <b>Group:</b> NCT/NCT Dream
                                     <br>
-                                    <b>Follower Count:</b> 6.8M
+                                    <b>Follower Count:</b> 6.9M
                                 </p>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/ryujin.jpeg">
-                                <h5>Ryujin</h5>
+                                <h5 class="viz-headers">Ryujin</h5>
                                 <p>
                                     <b>Group:</b> ITZY
                                     <br>
-                                    <b>Follower Count:</b> 4.4M
+                                    <b>Follower Count:</b> 4.5M
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div id="intro-hiphop">
                         <div id="cancel-hiphop" class="row">
-                            <h3>Hip-Hop</h3>
-                            <h5>Cancelled Artists</h5>
+                            <h3 class="viz-headers">Hip-Hop</h3>
+                            <h5 class="viz-headers">Cancelled Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/dababy.jpeg">
-                                <h5>DaBaby</h5>
+                                <h5 class="viz-headers">DaBaby</h5>
                                 <p><b>Follower Count:</b> 4.4M
                                     <br>
-                                    <b>Date Cancelled:</b> 8/24/21
+                                    <b>Date Cancelled:</b> 7/28/21
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -153,10 +164,10 @@
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/nicki.jpeg">
-                                <h5>Nicki Minaj</h5>
-                                <p><b>Follower Count:</b> 23.7M
+                                <h5 class="viz-headers">Nicki Minaj</h5>
+                                <p><b>Follower Count:</b> 24M
                                     <br>
-                                    <b>Date Cancelled:</b> 8/24/21
+                                    <b>Date Cancelled:</b> 9/13/21
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -166,30 +177,30 @@
                             </div>
                         </div>
                         <div id="control-hiphop" class="row control-viz1-img">
-                            <h5>Control Artists</h5>
+                            <h5 class="viz-headers">Control Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/lilbaby.jpeg">
-                                <h5>Lil Baby</h5>
+                                <h5 class="viz-headers">Lil Baby</h5>
                                 <p><b>Follower Count:</b> 6.2M
                                 </p>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/saweetie.jpeg">
-                                <h5>Saweetie</h5>
+                                <h5 class="viz-headers">Saweetie</h5>
                                 <p><b>Follower Count:</b> 2M
                             </div>
                         </div>
                     </div>
                     <div id="intro-pop">
                         <div id="cancel-pop" class="row">
-                            <h3>Pop</h3>
-                            <h5>Cancelled Artists</h5>
+                            <h3 class="viz-headers">Pop</h3>
+                            <h5 class="viz-headers">Cancelled Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/zayn.jpeg">
                                 <h5>Zayn Malik</h5>
                                 <p><b>Follower Count:</b> 31M
                                     <br>
-                                    <b>Date Cancelled:</b> 8/24/21
+                                    <b>Date Cancelled:</b> 10/28/21
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -199,10 +210,10 @@
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/doja.jpeg">
-                                <h5>Doja Cat</h5>
-                                <p><b>Follower Count:</b> 4.3M
+                                <h5 class="viz-headers">Doja Cat</h5>
+                                <p><b>Follower Count:</b> 4.5M
                                     <br>
-                                    <b>Date Cancelled:</b> 8/24/21
+                                    <b>Date Cancelled:</b> 5/25/20
                                     <br>
                                     <b>Reason for Cancellation:</b> 
                                     <br>
@@ -212,16 +223,16 @@
                             </div>
                         </div>
                         <div id="control-pop" class="row control-viz1-img">
-                            <h5>Control Artists</h5>
+                            <h5 class="viz-headers">Control Artists</h5>
                             <div class="celeb-img-container">
                                 <img src="./imgs/harry.jpeg">
-                                <h5>Harry Styles</h5>
+                                <h5 class="viz-headers">Harry Styles</h5>
                                 <p><b>Follower Count:</b> 37.4M
                                 </p>
                             </div>
                             <div class="celeb-img-container">
                                 <img src="./imgs/adele.png">
-                                <h5>Adele</h5>
+                                <h5 class="viz-headers">Adele</h5>
                                 <p><b>Follower Count:</b> 27.2M
                                 </p>
                             </div>
@@ -234,7 +245,7 @@
                 </p>
                 <div id="intro-data-viz">
                     <div id="data-tables">
-                        <h4>Cancelled Artists Dataset Overview</h4>
+                        <h4 class="viz-headers">Cancelled Artists Dataset Overview</h4>
                         <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
                             <thead>
                                 <tr>
@@ -276,7 +287,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <h4>Control Artists Dataset Overview</h4>
+                        <h4 class="viz-headers">Control Artists Dataset Overview</h4>
                         <table id="control-artists" class="table table-sm table-bordered table-responsive">
                             <thead>
                                 <tr>
@@ -323,7 +334,7 @@
             </div>
             <div id="methods">
                 <h2 class="sub-headers article-text">Methods</h2>
-                <h3 class="topic-headers article-text">Type of Cancellation</h3>
+                <h3 class="topic-headers article-text">Type of Issue</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -336,7 +347,7 @@
                     Parasocial relationships are one-sided relationships in which an individual develops illusions of intimacy or friendship with another individual, usually a media personality, as a result of repeated interactions between the individual and the media personality. Depending on the strength of the relationship, media personalities can have strong influence over their audiences as evident with fandoms or fan bases like BTS’s ARMYs or Taylor Swift’s Swifties.
                 </p>
                 <div id="fandom-viz">
-                    <h4 style="text-align:center">Fandom Names By Artist</h4>
+                    <h4 class="viz-headers"style="text-align:center">Fandom Names By Artist and Parasocial Strength</h4>
                     <div id="legend" class="row legend">
                         <h5 class="legend">Select a Genre</h5>
                         <button id="btn-all" type="button" class="legend btn btn-outline-dark active">
@@ -352,16 +363,8 @@
                             Pop
                         </button>
                     </div>
-                    <div id="legend" class="row legend">
-                        <h5 class="legend">By Strength</h5>
-                        <button id="btn-all2" type="button" class="legend btn btn-outline-dark active">
-                            All
-                        </button>
-                        <button id="btn-strength" type="button" class="legend btn btn-outline-dark">
-                            Strong vs. Weak
-                        </button>
-                    </div>
-                    <div id="first-row" class="row">
+                    <h5 id="fandom-strong-header" class="viz-headers">Strong Parasocial Fanbase</h5>
+                    <div class="row">
                         <div class="indiv-box fandom-kpop fandom-strong">
                             <img src="./imgs/kb_lc.jpeg">
                             <h5>LUCAS</h5>
@@ -389,13 +392,14 @@
                             <h5>NICKI<br>MINAJ</h5>
                             <p>barbz</p>
                         </div>
+                    </div>
+                    <h5 id="fandom-weak-header" class="viz-headers">Weak Parasocial Fanbase</h5>
+                    <div class="row">
                         <div class="indiv-box fandom-pop fandom-weak">
                             <img src="./imgs/zayn.jpeg">
                             <h5>ZAYN<br>MALIK</h5>
                             <p>directioners; zquad</p>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="indiv-box fandom-pop fandom-weak">
                             <img src="./imgs/doja.jpeg">
                             <h5>DOJA CAT</h5>
@@ -406,6 +410,8 @@
                             <h5>HARRY STYLES</h5>
                             <p>directioners; harries</p>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="indiv-box fandom-pop fandom-weak">
                             <img src="./imgs/adele.png">
                             <h5>ADELE</h5>
@@ -420,7 +426,7 @@
             </div>
             <div id="results">
                 <h2 class="sub-headers article-text">Results</h2>
-                <h3 class="topic-headers article-text">Type of Cancellation</h3>
+                <h3 class="topic-headers article-text">Type of Issue</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
                 </p>
@@ -438,8 +444,6 @@
                     <div id="bg-charts">
                         <div id="bg-toxic" class="type-line"></div>
                         <div id="bg-insult" class="type-line"></div>
-                        <div id="bg-vader1" class="type-line"></div>
-                        <div id="bg-vader2" class="type-line"></div>
                     </div>
                     <figure class="sticky">
                         <p>
@@ -458,6 +462,12 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
                 </p>
             </div>
+        </div>
+        <div id="methodology">
+            <h2 class="sub-headers article-text">Methodology</h2>
+            <p class="article-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+            </p>
         </div>
     </body>
 
