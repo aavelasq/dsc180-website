@@ -94,12 +94,10 @@ function changefandomOpacityPop() {
 }
 
 function drawBGLineToxic() {
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
-        width = (windowWidth/2) - margin.left - margin.right,
-        height = (windowHeight - 200) - margin.top - margin.bottom;
+    const margin = {top: 60, right: 40, bottom: 60, left: 40},
+        width = 850 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#bg-toxic")
@@ -113,7 +111,7 @@ function drawBGLineToxic() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#92a8d1", "#fdb3a5"])
+            .range(["#80e898", "#fdb3a5"])
 
     //Read the data
     d3.csv("./data/toxic_ps.csv", function(d){
@@ -204,14 +202,29 @@ function drawBGLineToxic() {
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .style("font-size", "1em");
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "1em") 
+        .style("fill", "white")
+        .text("Change in Severe Toxicity Rolling Mean");
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", height + 45)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "1em") 
+        .style("fill", "white")
+        .text("Days Since Cancellation");
 }
 
 function drawBGLineInsult() {
-    let windowWidth = window.innerWidth;
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 30, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
-        height = 350 - margin.top - margin.bottom;
+    const margin = {top: 60, right: 40, bottom: 60, left: 40},
+        width = 850 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#bg-insult")
@@ -225,7 +238,7 @@ function drawBGLineInsult() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#92a8d1", "#fdb3a5"])
+            .range(["#80e898", "#fdb3a5"])
 
     //Read the data
     d3.csv("./data/toxic_ps.csv", function(d){
@@ -306,6 +319,22 @@ function drawBGLineInsult() {
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .style("font-size", "1em");
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "1em") 
+        .style("fill", "white")
+        .text("Change in Insult Rolling Mean");
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", height + 45)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "1em") 
+        .style("fill", "white")
+        .text("Days Since Cancellation");
 }
 
 function drawBGLineVader1() {
