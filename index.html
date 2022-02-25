@@ -62,9 +62,9 @@
             <div id="intro">
                 <p class="article-text">
                     In today's social media age, we see trends happen every day. Every so often, 
-                    a celebrity would trend on social media platforms such as Twitter over behavior that the general public would consider offensive or socially unacceptable by today’s standards. 
-                    From politics to Hollywood, all kinds of public figures have been called out and criticized for such behavior by the masses. 
-                    This form of ​​modern ostracism is known as “cancel culture”, in which the masses attempt to call out and boycott an individual in response to problematic remarks or ideologies that they have expressed. 
+                    a celebrity would trend on social media platforms over behavior considered offensive or socially unacceptable. 
+                    From politics to Hollywood, all kinds of public figures have been called out and criticized by the masses. 
+                    This form of ​​modern ostracism is known as “cancel culture”, where the masses attempt to call out and boycott an individual in response to something problematic they've said or done. 
                     In particular, the music industry is no stranger to cancel culture as countless musicians such as 
                     <a href="https://www.buzzfeednews.com/article/stephaniesoteriou/travis-scott-no-remorse-astroworld-tragedy-kanye-west">Travis Scott</a> or 
                     <a href="https://www.vulture.com/article/lana-del-rey-cancelled-timeline.html">Lana Del Rey</a>
@@ -72,9 +72,21 @@
                 </p>
                 <br>
                 <p class="article-text">
-                    With this in mind, we wondered: how does sentiment towards musicians among English-speaking Twitter users change over time due to getting canceled?
-                    To answer this question, we analyzed how the type of issue the individual was cancelled for, 
-                    the background of the individual, and the strength of the individual's parasocial relationship with their fans affected 
+                    The rise of cancel culture has given power to people on social media platforms like Twitter,
+                    where they now have the power to hold musicians accountable for their actions. From people
+                    calling out Nicki Minaj for spreading COVID-19 vaccine misinformation to K-Pop stans 
+                    asking for NCT and WayV's Lucas to leave the group through hashtag 
+                    <a href="https://twitter.com/search?q=%23LUCAS_OUT&src=typed_query">#LUCAS_OUT</a>, expecting outrage
+                    and toxicity towards musicians on Twitter after their controversies seems to be the norm. 
+                </p>
+                <div id="twitter-trend-ex">
+                    <img id="twitter-trend-img" src="./imgs/trend_ex.png">
+                    <h6>Example of How Users are Shown What's Trending on Twitter </h6>
+                </div>
+                <p class="article-text">
+                    This common occurence of musicians getting canceled on Twitter made us wonder: how does sentiment towards musicians among English-speaking Twitter users change over time after getting canceled?
+                    To answer this question, we analyzed how the type of issue the musician was cancelled for, 
+                    the background of the musician, and the strength of the musician's parasocial relationship with their fans affected 
                     public sentiment over time. 
                 </p>
                 <h2 class="sub-headers article-text">The Data</h2>
@@ -334,6 +346,12 @@
             </div>
             <div id="methods">
                 <h2 class="sub-headers article-text">Methods</h2>
+                <p class="article-text">
+                    To measure the sentiment of each tweet, we used the Google Perspective API, which calculated the probability
+                    that a tweet would be percieved as either severely toxic or an insult. For example, a comment such as 
+                    "Today is a nice day :)" has a severe toxicity score of 0.02 but a comment like "I really HATE this song SO BAD" has a severe toxicity score of 0.35. 
+                    We then utilized these probability scores for each of our research questions.
+                </p>
                 <h3 class="topic-headers article-text">Type of Issue</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -345,6 +363,11 @@
                 <h3 class="topic-headers article-text">Parasocial Relationships</h3>
                 <p class="article-text">
                     Parasocial relationships are one-sided relationships in which an individual develops illusions of intimacy or friendship with another individual, usually a media personality, as a result of repeated interactions between the individual and the media personality. Depending on the strength of the relationship, media personalities can have strong influence over their audiences as evident with fandoms or fan bases like BTS’s ARMYs or Taylor Swift’s Swifties.
+                </p>
+                <br>
+                <p class="article-text">
+                    To determine which artists have fan bases that share either a strong or weak parasocial relationship with the artist, we used two metrics based on the artist's tweet engagement and the amount of tweets mentioning their fandom. 
+                    Based on those metrics, we then grouped our artists into two groups: artists with strong or weak parasocial fan bases.
                 </p>
                 <div id="fandom-viz">
                     <h4 class="viz-headers"style="text-align:center">Fandom Names By Artist and Parasocial Strength</h4>
@@ -434,10 +457,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="article-text">
-                    To determine which artists have fan bases that share either a strong or weak parasocial relationship with the artist, we used two metrics based on the artist's tweet engagement ratio and the ratio of tweets mentioning their fandom. 
-                    Based on those ratios, we then grouped our artists into those with either strong or weak parasocial fan bases.
-                </p>
             </div>
             <div id="results">
                 <h2 class="sub-headers article-text">Results</h2>
