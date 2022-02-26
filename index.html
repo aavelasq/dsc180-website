@@ -76,8 +76,8 @@
                     where they now have the power to hold musicians accountable for their actions. From people
                     calling out Nicki Minaj for spreading COVID-19 vaccine misinformation to K-Pop stans 
                     asking for NCT and WayV's Lucas to leave the group through hashtag 
-                    <a href="https://twitter.com/search?q=%23LUCAS_OUT&src=typed_query">#LUCAS_OUT</a>, expecting outrage
-                    and toxicity towards musicians on Twitter after their controversies seems to be the norm. 
+                    <a href="https://twitter.com/search?q=%23LUCAS_OUT&src=typed_query">#LUCAS_OUT</a>, 
+                    it seems to be expected for people to react with outrage and toxicity towards musicians on Twitter after their controversies. 
                 </p>
                 <!-- <div id="twitter-trend-ex">
                     <img id="twitter-trend-img" src="./imgs/trend_ex.png">
@@ -348,11 +348,30 @@
             <div id="methods">
                 <h2 class="sub-headers article-text">Methods</h2>
                 <p class="article-text">
-                    To measure the sentiment of each tweet, we used the Google Perspective API, which calculated the probability
-                    that a tweet would be percieved as either severely toxic or an insult. For example, a comment such as 
-                    "Today is a nice day :)" has a severe toxicity score of 0.02 but a comment like "I really HATE this song SO BAD" has a severe toxicity score of 0.35. 
-                    We then utilized these probability scores for each of our research questions.
+                    To measure sentiment for each artist, we utilized sentiment analysis, which is a 
+                    natural language processing technique that quantifies emotions detected in a piece of text. 
+                    Because we're analyzing the change in negative or toxic sentiment over time,
+                    we calculated two scores for all of our datasets, severe toxicity and insult probability scores.  
+                    Therefore, tweets that are higher in toxicity are given higher severe toxicity and insult scores. 
                 </p>
+                <div id="sentiment-ex">
+                    <div>
+                        <h5 id="pos-ex">Positive Example: Today is a nice day :)</h5>
+                        <p>
+                            <b>Severe Toxicity Score:</b> 0.02
+                            <br>
+                            <b>Insult Score:</b> 0.02
+                        </p>
+                    </div>
+                    <div>
+                        <h5 id="neg-ex">Negative Example: I really HATE this song SO BAD</h5>
+                        <p>
+                            <b>Severe Toxicity Score:</b> 0.35
+                            <br>
+                            <b>Insult Score:</b> 0.44
+                        </p>
+                    </div>
+                </div>
                 <h3 class="topic-headers article-text">Type of Issue</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -501,7 +520,9 @@
         <div id="methodology">
             <h2 class="sub-headers article-text">Methodology</h2>
             <p class="article-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
+                Sentiment Analysis: We used the Google Perspective API, which calculated the probability
+                that a tweet would be percieved as either severely toxic or an insult. For example, a comment such as 
+                "Today is a nice day :)" has a severe toxicity score of 0.02 but a comment like "I really HATE this song SO BAD" has a severe toxicity score of 0.35. 
             </p>
         </div>
     </body>

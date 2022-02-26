@@ -1,7 +1,7 @@
 var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
 var allBut, kpopBut, hhBut, popBut;
 var lucasDataBut;
-var opacityLvl = 0.5;
+var opacityLvl = 0.35;
 
 // fandom viz
 

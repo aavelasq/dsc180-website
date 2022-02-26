@@ -1,6 +1,8 @@
 :root {
-    --main-bg-color: #7e98bb;
-    --sub-bg-color: #556d8f;
+    --main-bg-color: #d3e6f7;
+    --sub-bg-color: #bcdcf8;
+    --name-header-color: #273242;
+    --font-color: rgb(51, 51, 51);
   }
 
 /* main body */
@@ -97,15 +99,14 @@ body div#main {
 
 p.article-text {
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     color: rgb(0, 0, 0);
     font-size: 1.1em;
-    font-weight: 300;
     line-height: 1.8;
 }
 
 .sub-headers {
-    color: #374886;
+    color: #173f77;
     text-align: left;
     padding-top: 30px;
     padding-bottom: 10px;
@@ -115,7 +116,7 @@ p.article-text {
 }
 
 .topic-headers {
-    color: #6176bb;
+    color: #456797;
     padding: 10px 0;
 }
 
@@ -191,7 +192,7 @@ div#intro-celeb-viz img {
     width: 85px;
     height: auto;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 3px solid white;
 }
 
 div#intro-celeb-viz div.control-viz1-img img {
@@ -205,7 +206,7 @@ div#intro-celeb-viz div.celeb-img-container .tooltiptext {
     width: 240px;
     background-color: var(--sub-bg-color);
     font-size: 0.9em;
-    color: #fff;
+    color: var(--font-color);
     text-align: center;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
@@ -243,14 +244,14 @@ div#intro-celeb-viz h5 {
 }
 
 div#intro-celeb-viz div.celeb-img-container h5 {
-    color:rgb(230, 240, 255);
+    color:var(--name-header-color);
     padding-top: 5px;
 }
 
 div#intro-celeb-viz div.celeb-img-container p {
     text-align: center;
-    font-size: 0.8em;
-    color: rgb(238, 238, 238);
+    font-size: 0.85em;
+    color: var(--font-color);
 }
 
 div#intro-data-viz {
@@ -269,7 +270,7 @@ div#intro-data-viz table {
 }
 
 div#intro-data-viz th {
-    color: rgb(255, 255, 255);
+    color: var(--font-color);
     font-size: 1em;
 }
 
@@ -278,8 +279,6 @@ div#intro-data-viz tr:hover {
 }
 
 div#intro-data-viz td.artists {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
     font-size: 1em;
     width: 15%;
 }
@@ -289,9 +288,8 @@ div#intro-data-viz td.tweet-num {
 }
 
 div#intro-data-viz td {
-    color: rgb(241, 238, 253);
+    color: var(--font-color);
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
     font-size: 0.75em;
 }
 
@@ -300,6 +298,32 @@ div#intro-data-viz td {
     div#intro-data-viz div#data-tables{
        margin: 0;
     }
+}
+
+/* sentiment example viz */
+div#sentiment-ex {
+    text-align: center;
+    margin: 10px 0;
+}
+
+div#sentiment-ex div {
+    background-color: var(--main-bg-color);
+    color: var(--font-color);
+    margin: 10px auto;
+    padding-top: 10px;
+    width: 470px;
+    font-family: "Roboto", sans-serif;
+    border: 2px solid var(--sub-bg-color);
+}
+
+div#sentiment-ex div h5#pos-ex {
+    color:rgb(53, 129, 91);
+    font-size: 1.2em;
+}
+
+div#sentiment-ex div h5#neg-ex {
+    color:rgb(218, 56, 91);
+    font-size: 1.2em;
 }
 
 div#fandom-viz {
@@ -324,7 +348,6 @@ div#fandom-viz div#legend button {
     width: auto;
     margin: 5px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
 }
 
 div#fandom-viz div#legend button:focus, 
@@ -332,7 +355,7 @@ div#fandom-viz div#legend button:hover,
 div#fandom-viz div#legend button:active,
 div#fandom-viz div#legend button.active {
     /* changes background color of button */
-    background-color: var(--sub-bg-color);
+    background-color: var(--name-header-color);
 }
 
 div#fandom-viz h5 {
@@ -342,11 +365,11 @@ div#fandom-viz h5 {
 }
 
 div#fandom-viz h5#fandom-strong-header {
-    color: var(--sub-bg-color)
+    color: var(--name-header-color);
 }
 
 div#fandom-viz h5#fandom-weak-header {
-    color: var(--main-bg-color);
+    color: var(--name-header-color);
 }
 
 div#fandom-viz div.indiv-box {
@@ -379,15 +402,14 @@ div#fandom-viz div.indiv-box img {
 div#fandom-viz div.indiv-box h5 {
     text-align: left;
     padding-top: 5px;
-    color: rgb(230, 240, 255);
+    color: var(--name-header-color);
     font-size: 1.1em;
 }
 
 div#fandom-viz div.indiv-box p {
-    color: white;
+    color: var(--font-color);
     font-size: 0.9em;
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
 }
 
 div#results div.chart-container {
