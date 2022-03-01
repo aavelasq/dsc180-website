@@ -10,6 +10,15 @@ body {
     background-color: #ffffff;
 }
 
+div#moblie-disclaimer {
+    background-color: rgb(49, 49, 49);
+    display: none;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
 div#header {
     background-color:rgb(10, 10, 10);
     background-image: url("./imgs/header2.png");
@@ -49,7 +58,7 @@ div#header .headers {
     padding-left: 10vh;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
     /* moblie devices */
     div#header {
         background-image: url("./imgs/headerMoblie.png");
@@ -514,6 +523,7 @@ div#fandom-viz div.indiv-box p {
 
 div#bg-plot-viz {
     color: var(--font-color);
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
 }

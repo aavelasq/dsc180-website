@@ -1,6 +1,6 @@
 var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
 var allBut, kpopBut, hhBut, popBut;
-var lucasDataBut;
+var moblieDiv;
 var opacityLvl = 0.35;
 
 // fandom viz
@@ -97,7 +97,7 @@ function drawBGLineToxic() {
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
     // set the dimensions and margins of the graph
-    const margin = {top: 60, right: 40, bottom: 60, left: 40},
+    const margin = {top: 30, right: 40, bottom: 50, left: 40},
         width = (windowWidth / 2) - margin.left - margin.right,
         height = (windowHeight - 100) - margin.top - margin.bottom;
 
@@ -188,7 +188,7 @@ function drawBGLineToxic() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -198,7 +198,7 @@ function drawBGLineToxic() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
@@ -207,17 +207,9 @@ function drawBGLineToxic() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "1em") 
-        .style("fill", "#333333")
-        .text("Change in Severe Toxicity Rolling Mean");
-
-    svg.append("text")
-        .attr("x", (width / 2))             
         .attr("y", height + 45)
         .attr("text-anchor", "middle")  
-        .style("font-size", "1em") 
+        .style("font-size", "0.9em") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -242,7 +234,7 @@ function drawBGLineInsult() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#80e898", "#fdb3a5"])
+            .range(["#367d33", "#a33939"])
 
     //Read the data
     d3.csv("./data/toxic_ps.csv", function(d){
@@ -261,11 +253,11 @@ function drawBGLineInsult() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "white"))
+                    .attr("stroke", "#333333"))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "white"))
+                    .attr("stroke", "#333333"))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "white")
+                    .attr("fill", "#333333")
                     .attr("y", "12")
                     .style("font-size", "1.4em"));
 
@@ -278,11 +270,11 @@ function drawBGLineInsult() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "white"))
+                    .attr("stroke", "#333333"))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "white"))
+                    .attr("stroke", "#333333"))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "white")
+                    .attr("fill", "#333333")
                     .style("font-size", "1.4em"));
 
         // draw lines
@@ -307,7 +299,7 @@ function drawBGLineInsult() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -317,7 +309,7 @@ function drawBGLineInsult() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
@@ -326,18 +318,10 @@ function drawBGLineInsult() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "1em") 
-        .style("fill", "white")
-        .text("Change in Insult Rolling Mean");
-
-    svg.append("text")
-        .attr("x", (width / 2))             
         .attr("y", height + 45)
         .attr("text-anchor", "middle")  
-        .style("font-size", "1em") 
-        .style("fill", "white")
+        .style("font-size", "0.9em") 
+        .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
 
@@ -830,6 +814,11 @@ function drawPSLineInsultControl() {
 }
 
 function init() {
+    if (window.innerWidth < 900) {
+        moblieDiv = document.getElementById("moblie-disclaimer");
+        moblieDiv.style.display = "block"
+    }
+
     // set variables
     fandom_list_kpop = document.querySelectorAll("div.fandom-kpop");
     fandom_list_hh = document.querySelectorAll("div.fandom-hh");
