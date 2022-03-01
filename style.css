@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color: #cfdcf5;
-    --sub-bg-color: #bbcbec;
+    --main-bg-color: #dae5fa;
+    --sub-bg-color: #bcd0f8;
     --name-header-color: #273242;
     --font-color: rgb(51, 51, 51);
   }
@@ -131,11 +131,11 @@ h4.viz-headers {
 }
 
 a {
-    color: rgb(110, 108, 190);
+    color: rgb(108, 150, 190);
 }
 
 a:hover {
-    color: rgb(53, 52, 90);
+    color: rgb(67, 93, 117);
     font-weight: 400;
 }
 
@@ -506,17 +506,9 @@ div#fandom-viz div.indiv-box p {
     font-family: "Roboto", sans-serif;
 }
 
-div#results div.chart-container {
-    padding: 20px 0;
-}
+/* results section */
 
 /* type viz */
-div#type-charts {
-    background-color: var(--main-bg-color);
-    margin: 0 80px;
-    padding-left: 2%;
-    padding-top: 10px;
-}
 
 /* background viz */
 
@@ -554,7 +546,7 @@ figure.sticky {
     padding: 10px;
     top: 15%;
     left: 0;
-    background-color: var(--sub-bg-color);
+    background-color: var(--main-bg-color);
     margin-left: 50px;
     max-width: 40%;
     height: auto;
@@ -572,6 +564,31 @@ figure.sticky p {
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+
+/* parasocial chart viz */
+div.ps-charts {
+    margin: auto;
+    padding: 0 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1000px) {
+    div.ps-charts {
+        display: block;
+    }
+}
+
+div.ps-charts .ps-line {
+    background-color: var(--main-bg-color);
+    padding: 15px 0;
+    padding-left: 20px;
+    margin-right: 20px;
+    border: 1px solid rgb(187, 196, 221);
+    text-align: center;
 }
 
 div#conclusion {
