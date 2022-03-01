@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color: #d3e6f7;
-    --sub-bg-color: #bdd0fa;
+    --main-bg-color: #cfdcf5;
+    --sub-bg-color: #bbcbec;
     --name-header-color: #273242;
     --font-color: rgb(51, 51, 51);
   }
@@ -32,14 +32,14 @@ div#header #title-header span {
 div#header #subtitle-header {
     font-weight: 200; 
     font-size: 1.5vw;
-    color: rgb(227, 231, 252);
+    color: white;
     font-family: "Roboto", sans-serif;
 }
 
 div#header #authors {
     font-weight: 100; 
     font-size: 1.2vw;
-    color: rgb(227, 231, 252);
+    color: white;
     font-family: "Roboto", sans-serif;
 }
 
@@ -125,9 +125,9 @@ p.article-text {
 }
 
 h4.viz-headers {
-    padding: 12px 0;
     color:rgb(18, 33, 66);
     text-align: center;
+    padding: 12px 0;
 }
 
 a {
@@ -181,6 +181,7 @@ div#intro-celeb-viz div.celeb-img-container {
     background-color: var(--main-bg-color);
     border-radius: 5%;
     transition: background-color 0.5s;
+    border: 1px solid rgb(187, 196, 221);
 }
 
 div#intro-celeb-viz div.celeb-img-container:hover {
@@ -256,8 +257,22 @@ div#intro-celeb-viz div.celeb-img-container p {
 
 div#intro-data-viz {
     position: relative;
-    display: inline-block;
+    display: inline;
     justify-content: center;
+}
+
+div#intro-data-viz div#dataset-btn-legend {
+    text-align: center;
+    display: block;
+    padding: 15px 0;
+}
+
+div#intro-data-viz #toggle-btn {
+    background-color: var(--main-bg-color);
+}
+
+div#intro-data-viz #toggle-btn:hover {
+    background-color: var(--name-header-color);
 }
 
 div#intro-data-viz div#data-tables {
@@ -326,6 +341,82 @@ div#sentiment-ex div h5#neg-ex {
     font-size: 1.2em;
 }
 
+div#type-viz {
+    padding: 20px 0;
+}
+
+div#type-viz .row {
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+div#type-viz h5 {
+    letter-spacing: 1px;
+}
+
+div#type-viz div.indiv {
+    background-color: var(--main-bg-color);
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: auto;
+    padding: 5px 10px;
+    margin: 0 10px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15%;
+    transition: 0.5s;
+    border: 1px solid rgb(187, 196, 221);
+}
+
+div#type-viz div.indiv:hover {
+    background-color: var(--sub-bg-color);
+    box-shadow: 4px 4px 4px rgb(107, 107, 107);
+}
+
+/* tooltip  */
+
+div#type-viz div.indiv .tooltip {
+    visibility: hidden;
+    width: 170px;
+    height: auto;
+    background-color: rgb(175, 199, 240);
+    font-size: 0.85em;
+    color: var(--font-color);
+    text-align: center;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5%;
+    border: 1px solid rgb(103, 119, 158);
+  
+    /* tooltip position */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: -22%;
+
+    /* transition */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+div#type-viz div.indiv:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+div#type-viz div.indiv img {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+div#type-viz div.indiv h6 {
+    color: var(--name-header-color);
+}
+
 div#fandom-viz {
     padding: 20px 0;
 }
@@ -348,6 +439,7 @@ div#fandom-viz div#legend button {
     width: auto;
     margin: 5px;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--main-bg-color);
 }
 
 div#fandom-viz div#legend button:focus, 
@@ -384,11 +476,13 @@ div#fandom-viz div.indiv-box {
 }
 
 div#fandom-viz div.fandom-strong {
-    background-color: var(--sub-bg-color)
+    background-color: var(--sub-bg-color);
+    border: 1px solid rgb(146, 159, 194);
 } 
 
 div#fandom-viz div.fandom-weak {
     background-color: var(--main-bg-color);
+    border: 1px solid rgb(187, 196, 221);
 } 
 
 div#fandom-viz div.indiv-box img {
@@ -427,7 +521,7 @@ div#type-charts {
 /* background viz */
 
 div#bg-plot-viz {
-    color: rgb(255, 255, 255);
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
 }
@@ -480,31 +574,34 @@ figure.sticky p {
     font-weight: 300;
 }
 
+div#conclusion {
+    padding-bottom: 50px;
+}
+
 div#methodology {
     padding-top: 1vh;
     padding-bottom: 10vh;
     background-color: rgb(15, 15, 15);
 }
 
-@media (max-width: 1000px) {
-    /* moblie devices */
-    div#methodology .article-text {
-       margin-left: 2%;
-       margin-right: 2%;
-    }
+div#methodology a {
+    color: white;
 }
 
-@media (min-width: 1200px) {
-    div#methodology .article-text {
-        margin: 0 25%;
-    }
+div#methodology a:hover {
+    color: white;
 }
 
 div#methodology h2 {
     color: rgb(190, 197, 233);
 }
 
+div#methodology h5 {
+    color: rgb(190, 197, 233);
+    padding: 10px 0;
+}
+
 div#methodology p {
-    font-size: 0.9em;
+    font-size: 1em;
     color: white;
 }
