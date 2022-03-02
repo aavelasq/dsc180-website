@@ -21,7 +21,7 @@ div#moblie-disclaimer {
 
 div#header {
     background-color:rgb(10, 10, 10);
-    background-image: url("./imgs/header2.png");
+    background-image: url("./imgs/header.png");
     background-size: contain;
     padding-top: 15vh;
     padding-bottom: 5vh;
@@ -148,14 +148,14 @@ a:hover {
     font-weight: 400;
 }
 
-div#twitter-trend-ex {
+/* tweet example img */
+
+div#twitter-tweet-ex {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-img#twitter-trend-img {
-    display:block;
+img#twitter-tweet-img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -206,7 +206,7 @@ div#intro-celeb-viz img {
 }
 
 div#intro-celeb-viz div.control-viz1-img img {
-    width: 65px;
+    width: 60px;
     height: auto;
 }
 
@@ -577,9 +577,13 @@ figure.sticky p {
 }
 
 /* parasocial chart viz */
+div#ps-plot-viz {
+    display: flex;
+}
+
 div.ps-charts {
     margin: auto;
-    padding: 0 5%;
+    /* padding: 0 5%; */
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
@@ -587,8 +591,15 @@ div.ps-charts {
 }
 
 @media (max-width: 1000px) {
+    div#ps-plot-viz {
+        display: block;
+        text-align: center;
+        margin: 1%;
+    }
+
     div.ps-charts {
         display: block;
+        text-align: center;
     }
 }
 

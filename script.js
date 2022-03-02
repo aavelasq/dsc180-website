@@ -94,12 +94,10 @@ function changefandomOpacityPop() {
 }
 
 function drawBGLineToxic() {
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
     // set the dimensions and margins of the graph
-    const margin = {top: 30, right: 40, bottom: 50, left: 40},
-        width = (windowWidth / 2) - margin.left - margin.right,
-        height = (windowHeight - 100) - margin.top - margin.bottom;
+    const margin = {top: 60, right: 40, bottom: 60, left: 40},
+        width = 800 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#bg-toxic")
@@ -215,12 +213,10 @@ function drawBGLineToxic() {
 }
 
 function drawBGLineInsult() {
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
     // set the dimensions and margins of the graph
     const margin = {top: 60, right: 40, bottom: 60, left: 40},
-        width = (windowWidth / 2) - margin.left - margin.right,
-        height = (windowHeight - 100) - margin.top - margin.bottom;
+        width = 800 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#bg-insult")
@@ -327,11 +323,9 @@ function drawBGLineInsult() {
 
 function drawPSLineToxicCancel() {
     // set the dimensions and margins of the graph
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
     const margin = {top: 10, right: 40, bottom: 50, left: 40},
-        width = (windowWidth / 2.5) - margin.left - margin.right,
-        height = (windowHeight / 2) - margin.top - margin.bottom;
+        width = 550 - margin.left - margin.right,
+        height = 370 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#ps-toxic-cancel")
@@ -447,135 +441,11 @@ function drawPSLineToxicCancel() {
             .text("Days Since Cancellation");
 }
 
-function drawPSLineToxicControl() {
-    // set the dimensions and margins of the graph
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
-        width = (windowWidth / 2.5) - margin.left - margin.right,
-        height = (windowHeight / 2) - margin.top - margin.bottom;
-
-    // append the svg object to the body of the page
-    const svg = d3.select("#ps-toxic-control")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-
-    const keys = ["strong", "weak"]
-
-    const colors = d3.scaleOrdinal()
-            .domain(keys)
-            .range(["#367d33", "#a33939"])
-
-    //Read the data
-    d3.csv("./data/control_toxic_ps.csv", function(d){
-        return {days: d.days_cancel, group: d.group, 
-        severe_toxicity:d.severe_toxicity}
-      },).then(function(data) {
-        // group the data
-        const sumstat = d3.group(data, d => d.group);
-
-        const x = d3.scaleLinear()
-            .domain([-185, 185])
-            .range([0,width]);
-
-        svg.append("g")
-            .attr("transform", `translate(0, ${height})`)
-            .call(d3.axisBottom(x)
-                    .tickSizeOuter(0))
-            .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .attr("y", "12")
-                    .style("font-size", "1.4em"));
-
-        // y axis
-        const y = d3.scaleLinear()
-            .domain([0.04, 0.21])
-            .range([height, 0]);
-
-        svg.append("g")
-            .call(d3.axisLeft(y)
-                    .ticks(10))
-            .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
-
-        // draw lines
-        svg.selectAll(".line")
-        .data(sumstat)
-        .join("path")
-            .attr("fill", "none")
-            .attr("stroke", function(d){ return colors(d) })
-            .attr("stroke-width", 1.5)
-            .attr("d", function(d){
-            return d3.line()
-                .x(function(d) { return x(d.days); })
-                .y(function(d) { return y(d.severe_toxicity); })
-                (d[1])
-            })
-            .attr("x", 100)
-
-        // vertical line to indicate date of cancellation
-        svg.append("line")
-            .join("path")
-                .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
-                .attr('x1', width / 2)
-                .attr('y1', 0)
-                .attr('x2', width / 2)
-                .attr('y2', height)
-    })
-
-    // legend dots
-    svg.selectAll("mydots")
-        .data(keys)
-        .enter()
-        .append("circle")
-            .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            .attr("r", 5)
-            .style("fill", function(d){ return colors(d)})
-
-    // legend labels 
-    svg.selectAll("mylabels")
-        .data(keys)
-        .enter()
-        .append("text")
-            .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            .style("fill", function(d){ return colors(d)})
-            .text(function(d){ return d})
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
-    
-    svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", height + 45)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "0.9em") 
-            .style("fill", "#333333")
-            .text("Days Since Cancellation");
-}
-
 function drawPSLineInsultCancel() {
     // set the dimensions and margins of the graph
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
     const margin = {top: 10, right: 40, bottom: 50, left: 40},
-        width = (windowWidth / 2.5) - margin.left - margin.right,
-        height = (windowHeight / 2) - margin.top - margin.bottom;
+        width = 550 - margin.left - margin.right,
+        height = 370 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     const svg = d3.select("#ps-insult-cancel")
@@ -593,128 +463,6 @@ function drawPSLineInsultCancel() {
 
     //Read the data
     d3.csv("./data/cancel_toxic_ps.csv", function(d){
-        return {days: d.days_cancel, group: d.group, 
-        insult:d.insult}
-      },).then(function(data) {
-        // group the data
-        const sumstat = d3.group(data, d => d.group);
-
-        const x = d3.scaleLinear()
-            .domain([-185, 185])
-            .range([0,width]);
-
-        svg.append("g")
-            .attr("transform", `translate(0, ${height})`)
-            .call(d3.axisBottom(x)
-                    .tickSizeOuter(0))
-            .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .attr("y", "12")
-                    .style("font-size", "1.4em"));
-
-        // y axis
-        const y = d3.scaleLinear()
-            .domain([0.06, 0.26])
-            .range([height, 0]);
-
-        svg.append("g")
-            .call(d3.axisLeft(y)
-                    .ticks(10))
-            .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
-            .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
-
-        // draw lines
-        svg.selectAll(".line")
-        .data(sumstat)
-        .join("path")
-            .attr("fill", "none")
-            .attr("stroke", function(d){ return colors(d) })
-            .attr("stroke-width", 1.5)
-            .attr("d", function(d){
-            return d3.line()
-                .x(function(d) { return x(d.days); })
-                .y(function(d) { return y(d.insult); })
-                (d[1])
-            })
-            .attr("x", 100)
-
-        // vertical line to indicate date of cancellation
-        svg.append("line")
-            .join("path")
-                .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
-                .attr('x1', width / 2)
-                .attr('y1', 0)
-                .attr('x2', width / 2)
-                .attr('y2', height)
-    })
-
-    // legend dots
-    svg.selectAll("mydots")
-        .data(keys)
-        .enter()
-        .append("circle")
-            .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            .attr("r", 5)
-            .style("fill", function(d){ return colors(d)})
-
-    // legend labels 
-    svg.selectAll("mylabels")
-        .data(keys)
-        .enter()
-        .append("text")
-            .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            .style("fill", function(d){ return colors(d)})
-            .text(function(d){ return d})
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
-
-    svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", height + 45)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "0.9em") 
-            .style("fill", "#333333")
-            .text("Days Since Cancellation");
-}
-
-function drawPSLineInsultControl() {
-    // set the dimensions and margins of the graph
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
-        width = (windowWidth / 2.5) - margin.left - margin.right,
-        height = (windowHeight / 2) - margin.top - margin.bottom;
-
-    // append the svg object to the body of the page
-    const svg = d3.select("#ps-insult-control")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-
-    const keys = ["strong", "weak"]
-
-    const colors = d3.scaleOrdinal()
-            .domain(keys)
-            .range(["#367d33", "#a33939"])
-
-    //Read the data
-    d3.csv("./data/control_toxic_ps.csv", function(d){
         return {days: d.days_cancel, group: d.group, 
         insult:d.insult}
       },).then(function(data) {
@@ -837,9 +585,7 @@ function init() {
     drawBGLineToxic();
     drawBGLineInsult();
     drawPSLineToxicCancel();
-    drawPSLineToxicControl();
     drawPSLineInsultCancel();
-    drawPSLineInsultControl();
 }
 
 document.addEventListener('DOMContentLoaded', init, false);
