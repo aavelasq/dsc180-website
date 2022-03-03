@@ -2,6 +2,7 @@ var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
 var allBut, kpopBut, hhBut, popBut;
 var moblieDiv;
 var opacityLvl = 0.35;
+var axisColor = "#828282";
 
 // fandom viz
 
@@ -181,13 +182,13 @@ function drawTypeLineToxic() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -198,12 +199,12 @@ function drawTypeLineToxic() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -224,8 +225,8 @@ function drawTypeLineToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -302,13 +303,13 @@ function drawTypeLineInsult() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -319,12 +320,12 @@ function drawTypeLineInsult() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -345,8 +346,8 @@ function drawTypeLineInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -423,13 +424,13 @@ function drawBGLineGenreToxic() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -440,12 +441,12 @@ function drawBGLineGenreToxic() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -465,8 +466,8 @@ function drawBGLineGenreToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -543,13 +544,13 @@ function drawBGLineGenreInsult() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -560,12 +561,12 @@ function drawBGLineGenreInsult() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -585,8 +586,8 @@ function drawBGLineGenreInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -663,13 +664,13 @@ function drawBGLineSexToxic() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -680,12 +681,12 @@ function drawBGLineSexToxic() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke",axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -705,8 +706,8 @@ function drawBGLineSexToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -783,13 +784,13 @@ function drawBGLineSexInsult() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -800,12 +801,12 @@ function drawBGLineSexInsult() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill",axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -825,8 +826,8 @@ function drawBGLineSexInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -903,13 +904,13 @@ function drawPSLineToxicCancel() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -920,12 +921,12 @@ function drawPSLineToxicCancel() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -946,8 +947,8 @@ function drawPSLineToxicCancel() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)
@@ -1024,13 +1025,13 @@ function drawPSLineInsultCancel() {
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
+                    .attr("fill", axisColor)
                     .attr("y", "12")
-                    .style("font-size", "1.4em"));
+                    .style("font-size", "1.3em"));
 
         // y axis
         const y = d3.scaleLinear()
@@ -1041,12 +1042,12 @@ function drawPSLineInsultCancel() {
             .call(d3.axisLeft(y)
                     .ticks(10))
             .call(g => g.selectAll(".domain")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
-                    .attr("stroke", "#333333"))
+                    .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick text")
-                    .attr("fill", "#333333")
-                    .style("font-size", "1.4em"));
+                    .attr("fill", axisColor)
+                    .style("font-size", "1.3em"));
 
         // draw lines
         svg.selectAll(".line")
@@ -1067,8 +1068,8 @@ function drawPSLineInsultCancel() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', '#333333')
-                .attr("stroke-width", 1.5)
+                .attr('stroke', axisColor)
+                .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
                 .attr('x2', width / 2)

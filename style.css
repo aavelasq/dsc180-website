@@ -1,6 +1,6 @@
 :root {
-    --main-bg-color: #e9efff;
-    --sub-bg-color: #ccdaf5;
+    --main-bg-color: #d8e7fc;
+    --sub-bg-color: #bfcff0;
     --name-header-color: #2f3c50;
     --font-color: rgb(51, 51, 51);
   }
@@ -38,17 +38,17 @@ div#header #title-header span {
 }
 
 div#header #subtitle-header {
-    font-weight: 200; 
-    font-size: 1.5vw;
+    font-weight: 300; 
+    font-size: 1.55vw;
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 div#header #authors {
-    font-weight: 100; 
-    font-size: 1.2vw;
+    font-weight: 300; 
+    font-size: 1.3vw;
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 div#header .headers {
@@ -106,11 +106,11 @@ body div#main {
 }
 
 p.article-text {
-    font-family: "Lora", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
-    color: rgb(0, 0, 0);
-    font-size: 1.1em;
-    line-height: 1.8;
+    color: rgb(56, 56, 56);
+    font-size: 1.2em;
+    line-height: 1.7;
 }
 
 .sub-headers {
@@ -130,11 +130,12 @@ p.article-text {
 }
 
 .viz-headers {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .viz-subtitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     color:#757575;
     font-weight: 500;
@@ -161,7 +162,7 @@ a:hover {
 
 div#twitter-tweet-ex {
     text-align: center;
-    margin-top: 20px;
+    padding-top: 25px;
 }
 
 img#twitter-tweet-img {
@@ -337,6 +338,7 @@ div#intro-data-viz td {
 
 /* sentiment example viz */
 div#sentiment-ex {
+    padding-top: 5px;
     text-align: center;
     margin: 10px 0;
 }
@@ -346,17 +348,21 @@ div#sentiment-ex div {
     color: var(--font-color);
     margin: 10px auto;
     padding-top: 10px;
-    width: 470px;
+    width: 530px;
     font-family: "Roboto", sans-serif;
     border: 1px solid var(--sub-bg-color);
 }
 
 div#sentiment-ex div h5#pos-ex {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
     color:rgb(53, 129, 91);
     font-size: 1.2em;
 }
 
 div#sentiment-ex div h5#neg-ex {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
     color:rgb(218, 56, 91);
     font-size: 1.2em;
 }
@@ -375,9 +381,9 @@ div#type-viz div.indiv {
     background-color: var(--main-bg-color);
     position: relative;
     display: inline-block;
-    width: 120px;
+    width: 130px;
     height: auto;
-    padding: 5px 10px;
+    padding: 5px;
     margin: 0 10px;
     text-align: center;
     justify-content: center;
@@ -404,14 +410,14 @@ div#type-viz div.indiv .tooltip {
     text-align: center;
     padding: 5px;
     font-family: 'Roboto', sans-serif;
-    border-radius: 5%;
+    border-radius: 2%;
     border: 1px solid rgb(103, 119, 158);
   
     /* tooltip position */
     position: absolute;
     z-index: 1;
     top: 105%;
-    left: -22%;
+    left: -18%;
 
     /* transition */
     opacity: 0;
@@ -428,6 +434,11 @@ div#type-viz div.indiv img {
     height: auto;
     border-radius: 50%;
     border: 2px solid white;
+}
+
+div#type-viz h5 {
+    color:rgb(34, 58, 94);
+    padding-bottom: 5px;
 }
 
 div#type-viz div.indiv h6 {
@@ -528,6 +539,10 @@ div#fandom-viz div.indiv-box p {
 }
 
 /* results section */
+
+div.chart-container h6 {
+    color: var(--name-header-color);
+}
 
 /* type viz */
 div#type-plot-viz1 {
