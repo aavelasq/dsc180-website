@@ -77,7 +77,10 @@
                     
                 </p>
                 <div id="intro-celeb-viz">
-                    <h4 class="viz-headers">Introducing the Artists...</h4>                    
+                    <h4 class="viz-headers">Introducing the Artists...</h4> 
+                    <p class="viz-subtitle">
+                        Hover over a cancelled artist for details on why they got cancelled. 
+                    </p>                   
                     <div id="intro-kpop">
                         <div id="cancel-kpop" class="row">
                             <h3 class="viz-headers">K-Pop</h3>
@@ -395,7 +398,7 @@
                         </p>
                     </div>
                 </div>
-                <h3 class="topic-headers article-text">Type of Issue</h3>
+                <h3 class="topic-headers article-text">Type of Issue For Cancellation</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -403,6 +406,9 @@
                     <h4 class="viz-headers">
                         Canceled Artists By Type of Issue
                     </h4>
+                    <p class="viz-subtitle">
+                        Hover over a cancelled artist for more information on their genre and issue. 
+                    </p>      
                     <div class="row">
                         <h5>Discrimination Against Marginalized Groups</h5>
                         <div class="indiv">
@@ -471,7 +477,7 @@
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <h3 class="topic-headers article-text">Parasocial Relationships</h3>
+                <h3 class="topic-headers article-text">Strength of Parasocial Relationships</h3>
                 <p class="article-text">
                     Parasocial relationships are one-sided relationships in which an individual develops illusions of intimacy or friendship with another individual, usually a media personality, as a result of repeated interactions between the individual and the media personality. Depending on the strength of the relationship, media personalities can have strong influence over their audiences as evident with fandoms or fan bases like BTS’s ARMYs or Taylor Swift’s Swifties.
                 </p>
@@ -537,14 +543,21 @@
             </div>
             <div id="results">
                 <h2 class="sub-headers article-text">Results</h2>
-                <h3 class="topic-headers article-text">Type of Issue</h3>
+                <h3 class="topic-headers article-text">Type of Issue For Cancellation</h3>
                 <p class="article-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan. Porta non pulvinar neque laoreet suspendisse interdum. Molestie a iaculis at erat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Ac turpis egestas integer eget aliquet. Tempus imperdiet nulla malesuada pellentesque.
                 </p>
                 <div id="type-plot-viz" class="chart-container">
-                    <div id="type-charts">
-                        <div id="type-toxic" class="type-line"></div>
-                        <div id="type-vader" class="type-line"></div>
+                    <div id="type-bar-charts">
+
+                    </div>
+                    <div id="type-line-charts">
+                        <div id="type-toxic" class="type-line">
+                            <h6>Change in Median Severe Toxicity Score By Type of Issue</h6>
+                        </div>
+                        <div id="type-insult" class="type-line">
+                            <h6>Change in Median Insult Score By Type of Issue</h6>
+                        </div>
                     </div>
                 </div>
                 <h3 class="topic-headers article-text">Background of Cancelled Artist</h3>
@@ -553,8 +566,22 @@
                 </p>
                 <div id="bg-plot-viz" class="chart-container">
                     <div id="bg-charts">
-                        <div id="bg-toxic" class="bg-line"></div>
-                        <div id="bg-insult" class="bg-line"></div>
+                        <div id="bg-genre" class="bg-lines">
+                            <div id="bg-genre-toxic" class="bg-chart">
+                                <h6>Change in Median Severe Toxicity Score By Genre</h6>
+                            </div>
+                            <div id="bg-genre-insult" class="bg-chart">
+                                <h6>Change in Median Insult Score By Genre</h6>
+                            </div>
+                        </div>
+                        <div id="bg-sex" class="bg-lines">
+                            <div id="bg-sex-toxic" class="bg-chart">
+                                <h6>Change in Median Severe Toxcity Score By Sex</h6>
+                            </div>
+                            <div id="bg-sex-insult" class="bg-chart">
+                                <h6>Change in Median Insult Score By Sex</h6>
+                            </div>
+                        </div>
                     </div>
                     <figure class="sticky">
                         <p>
@@ -562,20 +589,31 @@
                         </p>
                     </figure>
                 </div>
-                <h3 class="topic-headers article-text">Parasocial Relationships</h3>
+                <h3 class="topic-headers article-text">Strength of Parasocial Relationships</h3>
                 <p class="article-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
+                    Looking at how the strength of each artist's parasocial relationship with their fans affects overall sentiment, 
+                    artists with a <b>strong parasocial relationship tend to have lower negative sentiment</b> compared to artists with a weak parasocial relationship.
+                    Both groups have an inital spike in negative sentiment directly after cancellation. However, there is another
+                    major spike in severe toxicity and insult score after 100 days for artists with a weak parasocial relationship.
+                    On the other hand, there is a gradual drop in negative sentiment for artists with a strong parasocial relationship
+                    and although there is also a spike around the 100 day mark, it does not reach
+                    near the same initial level of negative sentiment seen after cancellation unlike for the weak parasocial group.  
                 </p>
                 <div id="ps-plot-viz" class="chart-container">
-                    <div class="ps-charts">
+                    <div id="ps-charts">
                         <div id="ps-toxic-cancel" class="ps-line">
-                            <h6>Change in Median Severe Toxicity Among Canceled Artists</h6>
+                            <h6>Change in Median Severe Toxicity Score By Parasocial Strength</h6>
                         </div>
                         <div id="ps-insult-cancel" class="ps-line">
-                            <h6>Change in Median Insult Among Canceled Artists</h6>
+                            <h6>Change in Median Insult Score By Parasocial Strength</h6>
                         </div>
                     </div>
                 </div>
+                <p class="article-text"> 
+                    By having a strong parasocial connection with the artist, these artists' fanbases are more likely to feel
+                    inclined to defend them and block out as much negativity surrounding them and their controveries as possible, 
+                    leading to the difference we see in overall negative sentiment between our strong and weak parasocial groups.
+                </p>
             </div>
             <div id="conclusion">
                 <h2 class="sub-headers article-text">Conclusion</h2>
