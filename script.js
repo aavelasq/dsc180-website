@@ -93,13 +93,64 @@ function changefandomOpacityPop() {
     }
 }
 
+function drawTypeBar1() {
+    // margins
+    const margin = {top: 10, right: 40, bottom: 50, left: 60},
+        width = 600 - margin.left - margin.right,
+        height = 350 - margin.top - margin.bottom;
+
+    // append svg to specified div
+    const svg = d3.select("#type-word-bar1")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    d3.csv("./data/fake_bar_data.csv").then(function(data) {
+
+            // x axis
+            const x = d3.scaleLinear()
+                .domain([0, 10000])
+                .range([0,width]);
+
+            svg.append("g")
+                .attr("transform", `translate(0, ${height})`)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                  .attr("transform", "translate(-10,0)rotate(-45)")
+                  .style("text-anchor", "end")
+                  .style("font-size", "1.2em");
+
+            // y axis
+            const y = d3.scaleBand()
+                .range([0, height])
+                .domain(data.map(function(d) { return d.word; }))
+                .padding(.1);
+                
+            svg.append("g")
+                .call(d3.axisLeft(y))
+                .style("font-size", "0.8em");
+
+            // draw lines
+            svg.selectAll("myRect")
+                .data(data)
+                    .join("rect")
+                    .attr("x", x(0) )
+                    .attr("y", d => y(d.word))
+                    .attr("width", d => x(d.value))
+                    .attr("height", y.bandwidth())
+                    .attr("fill", "grey")
+        })
+}
+
 function drawTypeLineToxic() {
-    // set the dimensions and margins of the graph
+    // margins
     const margin = {top: 10, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
-    // append the svg object to the body of the page
+    // append svg to specified div
     const svg = d3.select("#type-toxic")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -156,18 +207,18 @@ function drawTypeLineToxic() {
 
         // draw lines
         svg.selectAll(".line")
-        .data(sumstat)
-        .join("path")
-            .attr("fill", "none")
-            .attr("stroke", function(d){ return colors(d) })
-            .attr("stroke-width", 2)
-            .attr("d", function(d){
-            return d3.line()
-                .x(function(d) { return x(d.days); })
-                .y(function(d) { return y(d.severe_toxicity); })
-                (d[1])
-            })
-            .attr("x", 100)
+            .data(sumstat)
+            .join("path")
+                .attr("fill", "none")
+                .attr("stroke", function(d){ return colors(d) })
+                .attr("stroke-width", 2)
+                .attr("d", function(d){
+                return d3.line()
+                    .x(function(d) { return x(d.days); })
+                    .y(function(d) { return y(d.severe_toxicity); })
+                    (d[1])
+                })
+                .attr("x", 100)
 
         // vertical line to indicate date of cancellation
         svg.append("line")
@@ -205,21 +256,22 @@ function drawTypeLineToxic() {
             .style("font-size", "1em");
     
     svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", height + 45)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "0.9em") 
-            .style("fill", "#333333")
-            .text("Days Since Cancellation");
+        .attr("x", (width / 2))             
+        .attr("y", height + 45)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "0.9em")
+        .style("font-weight", "500")  
+        .style("fill", "#333333")
+        .text("Days Since Cancellation");
 }
 
 function drawTypeLineInsult() {
-    // set the dimensions and margins of the graph
+    // margins
     const margin = {top: 10, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
-    // append the svg object to the body of the page
+    // append svg to specified div
     const svg = d3.select("#type-insult")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -325,18 +377,19 @@ function drawTypeLineInsult() {
             .style("font-size", "1em");
 
     svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", height + 45)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "0.9em") 
-            .style("fill", "#333333")
-            .text("Days Since Cancellation");
+        .attr("x", (width / 2))             
+        .attr("y", height + 45)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "0.9em")
+        .style("font-weight", "500")  
+        .style("fill", "#333333")
+        .text("Days Since Cancellation");
 }
 
 function drawBGLineGenreToxic() {
     // set the dimensions and margins of the graph
     const margin = {top: 10, right: 40, bottom: 60, left: 40},
-        width = 800 - margin.left - margin.right,
+        width = 780 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -445,9 +498,10 @@ function drawBGLineGenreToxic() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", height + 45)
+        .attr("y", height + 50)
         .attr("text-anchor", "middle")  
-        .style("font-size", "0.9em") 
+        .style("font-size", "1em") 
+        .style("font-weight", "500") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -455,7 +509,7 @@ function drawBGLineGenreToxic() {
 function drawBGLineGenreInsult() {
     // set the dimensions and margins of the graph
     const margin = {top: 10, right: 40, bottom: 60, left: 40},
-        width = 800 - margin.left - margin.right,
+        width = 780 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -564,9 +618,10 @@ function drawBGLineGenreInsult() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", height + 45)
+        .attr("y", height + 50)
         .attr("text-anchor", "middle")  
-        .style("font-size", "0.9em") 
+        .style("font-size", "1em") 
+        .style("font-weight", "500") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -574,7 +629,7 @@ function drawBGLineGenreInsult() {
 function drawBGLineSexToxic() {
     // set the dimensions and margins of the graph
     const margin = {top: 10, right: 40, bottom: 60, left: 40},
-        width = 800 - margin.left - margin.right,
+        width = 780 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -589,7 +644,7 @@ function drawBGLineSexToxic() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#e34fe0", "#3d5999"])
+            .range(["#bf43bd", "#3d5999"])
 
     //Read the data
     d3.csv("./data/sex_toxic.csv", function(d){
@@ -683,9 +738,10 @@ function drawBGLineSexToxic() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", height + 45)
+        .attr("y", height + 50)
         .attr("text-anchor", "middle")  
-        .style("font-size", "0.9em") 
+        .style("font-size", "1em") 
+        .style("font-weight", "500") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -693,7 +749,7 @@ function drawBGLineSexToxic() {
 function drawBGLineSexInsult() {
     // set the dimensions and margins of the graph
     const margin = {top: 10, right: 40, bottom: 60, left: 40},
-        width = 800 - margin.left - margin.right,
+        width = 780 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -708,7 +764,7 @@ function drawBGLineSexInsult() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#e34fe0", "#3d5999"])
+            .range(["#bf43bd", "#3d5999"])
 
     //Read the data
     d3.csv("./data/sex_insult.csv", function(d){
@@ -802,9 +858,10 @@ function drawBGLineSexInsult() {
 
     svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", height + 45)
+        .attr("y", height + 50)
         .attr("text-anchor", "middle")  
-        .style("font-size", "0.9em") 
+        .style("font-size", "1em") 
+        .style("font-weight", "500") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -924,7 +981,8 @@ function drawPSLineToxicCancel() {
             .attr("x", (width / 2))             
             .attr("y", height + 45)
             .attr("text-anchor", "middle")  
-            .style("font-size", "0.9em") 
+            .style("font-size", "0.9em")
+            .style("font-weight", "500")  
             .style("fill", "#333333")
             .text("Days Since Cancellation");
 }
@@ -1045,6 +1103,7 @@ function drawPSLineInsultCancel() {
             .attr("y", height + 45)
             .attr("text-anchor", "middle")  
             .style("font-size", "0.9em") 
+            .style("font-weight", "500") 
             .style("fill", "#333333")
             .text("Days Since Cancellation");
 }
@@ -1070,12 +1129,15 @@ function init() {
     hhBut.addEventListener("click", changefandomOpacityHiphop);
     popBut.addEventListener("click", changefandomOpacityPop);
 
+    drawTypeBar1();
     drawTypeLineToxic();
     drawTypeLineInsult();
+
     drawBGLineGenreToxic();
     drawBGLineGenreInsult();
     drawBGLineSexToxic();
     drawBGLineSexInsult();
+
     drawPSLineToxicCancel();
     drawPSLineInsultCancel();
 }
