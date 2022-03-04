@@ -204,7 +204,7 @@ function drawTypeBar2() {
 
 function drawTypeLineToxic() {
     // margins
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
+    const margin = {top: 20, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
@@ -325,7 +325,7 @@ function drawTypeLineToxic() {
 
 function drawTypeLineInsult() {
     // margins
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
+    const margin = {top: 20, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
@@ -448,7 +448,7 @@ function drawTypeLineInsult() {
 
 function drawBGLineGenreToxic() {
     // set the dimensions and margins of the graph
-    const margin = {top: 15, right: 50, bottom: 60, left: 50},
+    const margin = {top: 20, right: 50, bottom: 60, left: 50},
         width = 750 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -568,7 +568,7 @@ function drawBGLineGenreToxic() {
 
 function drawBGLineGenreInsult() {
     // set the dimensions and margins of the graph
-    const margin = {top: 15, right: 50, bottom: 60, left: 50},
+    const margin = {top: 20, right: 50, bottom: 60, left: 50},
         width = 750 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -688,7 +688,7 @@ function drawBGLineGenreInsult() {
 
 function drawBGLineSexToxic() {
     // set the dimensions and margins of the graph
-    const margin = {top: 15, right: 50, bottom: 60, left: 50},
+    const margin = {top: 20, right: 50, bottom: 60, left: 50},
         width = 750 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -704,7 +704,7 @@ function drawBGLineSexToxic() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#bf43bd", "#3d5999"])
+            .range(["#47a672", "#2f2796"])
 
     //Read the data
     d3.csv("./data/sex_toxic.csv", function(d){
@@ -808,7 +808,7 @@ function drawBGLineSexToxic() {
 
 function drawBGLineSexInsult() {
     // set the dimensions and margins of the graph
-    const margin = {top: 15, right: 50, bottom: 60, left: 50},
+    const margin = {top: 20, right: 50, bottom: 60, left: 50},
         width = 750 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -824,7 +824,7 @@ function drawBGLineSexInsult() {
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#bf43bd", "#3d5999"])
+            .range(["#47a672", "#2f2796"])
 
     //Read the data
     d3.csv("./data/sex_insult.csv", function(d){
@@ -930,7 +930,7 @@ function drawBGLineSexInsult() {
 
 function drawPSLineToxicCancel() {
     // set the dimensions and margins of the graph
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
+    const margin = {top: 20, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
@@ -1051,7 +1051,7 @@ function drawPSLineToxicCancel() {
 
 function drawPSLineInsultCancel() {
     // set the dimensions and margins of the graph
-    const margin = {top: 10, right: 40, bottom: 50, left: 40},
+    const margin = {top: 20, right: 40, bottom: 50, left: 40},
         width = 550 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 

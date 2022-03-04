@@ -3,6 +3,7 @@
     --sub-bg-color: #bfcff0;
     --name-header-color: #2f3c50;
     --font-color: rgb(51, 51, 51);
+    --results-bg-color: rgba(241, 252, 255, 0.233);
   }
 
 /* main body */
@@ -28,7 +29,7 @@ div#header {
 }
 
 div#header #title-header {
-    font-size: 7.5vw;
+    font-size: 7.8vw;
     color: rgb(190, 197, 233);
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -39,7 +40,7 @@ div#header #title-header span {
 
 div#header #subtitle-header {
     font-weight: 300; 
-    font-size: 1.55vw;
+    font-size: 1.5vw;
     color: white;
     font-family: "Open Sans", sans-serif;
 }
@@ -61,7 +62,7 @@ div#header .headers {
     /* moblie devices */
     div#header {
         background-image: url("./imgs/headerMoblie.png");
-        padding-top: 15vh;
+        padding-top: 10vh;
     }
 
     div#header div#title-container {
@@ -110,7 +111,7 @@ p.article-text {
     font-weight: 400;
     color: rgb(56, 56, 56);
     font-size: 1.15em;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .sub-headers {
@@ -166,14 +167,18 @@ a:hover {
 div#twitter-tweet-ex {
     text-align: center;
     padding-top: 25px;
+    padding-left: 2%;
+    padding-right: 2%;
     font-family: "Open Sans", sans-serif;
 }
 
 img#twitter-tweet-img {
+    max-width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    border-radius: 2%;
+    border-radius: 1%;
 }
 
 /* visualization for intro cancelled individuals + controls  */
@@ -214,14 +219,14 @@ div#intro-celeb-viz div.celeb-img-container:hover {
 }
 
 div#intro-celeb-viz img {
-    width: 85px;
+    width: 80px;
     height: auto;
     border-radius: 50%;
     border: 3px solid white;
 }
 
 div#intro-celeb-viz div.control-viz1-img img {
-    width: 60px;
+    width: 65px;
     height: auto;
 }
 
@@ -351,7 +356,7 @@ div#sentiment-ex {
 }
 
 div#sentiment-ex div {
-    background-color: var(--main-bg-color);
+    background-color: var(--results-bg-color);
     color: var(--font-color);
     margin: 10px auto;
     padding-top: 10px;
@@ -387,7 +392,7 @@ div#type-viz div.indiv {
     background-color: var(--main-bg-color);
     position: relative;
     display: inline-block;
-    width: 130px;
+    width: 120px;
     height: auto;
     padding: 5px;
     margin: 0 10px;
@@ -436,7 +441,7 @@ div#type-viz div.indiv:hover .tooltip {
 }
 
 div#type-viz div.indiv img {
-    width: 75px;
+    width: 70px;
     height: auto;
     border-radius: 50%;
     border: 2px solid white;
@@ -507,7 +512,7 @@ div#fandom-viz h5#fandom-weak-header {
 
 div#fandom-viz div.indiv-box {
     width: 200px;
-    height: 130px;
+    height: 125px;
     position: relative;
     margin: 5px;
     padding: 12px;
@@ -543,7 +548,7 @@ div#fandom-viz div.indiv-box h5 {
 
 div#fandom-viz div.indiv-box p {
     color: var(--font-color);
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -551,6 +556,7 @@ div#fandom-viz div.indiv-box p {
 
 div.chart-container h6 {
     color: var(--name-header-color);
+    font-size: 1.05em;
 }
 
 /* type viz */
@@ -571,7 +577,7 @@ div#type-bar-charts {
 }
 
 div#type-bar-charts div.type-bar {
-    background-color: var(--main-bg-color);
+    background-color: var(--results-bg-color);
     padding: 15px 0;
     padding-left: 20px;
     margin-right: 20px;
@@ -601,7 +607,7 @@ div#type-line-charts {
 }
 
 div#type-line-charts .type-line {
-    background-color: var(--main-bg-color);
+    background-color: var(--results-bg-color);
     padding: 15px 0;
     padding-left: 20px;
     margin-right: 20px;
@@ -633,7 +639,7 @@ div#bg-plot-viz > * {
 }
 
 div#bg-charts div.bg-lines {
-    background-color: var(--main-bg-color);
+    background-color: var(--results-bg-color);
     width: auto;
     padding-left: 20px;
     border: 1px solid rgb(187, 196, 221);
@@ -704,7 +710,7 @@ div#ps-charts {
 }
 
 div#ps-charts .ps-line {
-    background-color: var(--main-bg-color);
+    background-color: var(--results-bg-color);
     padding: 15px 0;
     padding-left: 20px;
     margin-right: 20px;
