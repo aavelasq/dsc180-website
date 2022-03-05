@@ -122,10 +122,16 @@ function drawTypeBarBef() {
             svg.append("g")
                 .attr("transform", `translate(0, ${height})`)
                 .call(d3.axisBottom(x))
+                .call(g => g.selectAll(".domain")
+                        .attr("stroke", axisColor))
+                    .call(g => g.selectAll(".tick line")
+                            .attr("stroke", axisColor))
                 .selectAll("text")
-                  .attr("transform", "translate(-10,0)rotate(-45)")
-                  .style("text-anchor", "end")
-                  .style("font-size", "1.2em");
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end")
+                    .attr("font-family", "Open Sans")
+                    .attr("font-weight", 500)
+                    .style("font-size", "1.2em");
 
             // y axis
             const y = d3.scaleBand()
@@ -135,7 +141,13 @@ function drawTypeBarBef() {
                 
             svg.append("g")
                 .call(d3.axisLeft(y))
-                .style("font-size", "0.8em");
+                .attr("font-family", "Open Sans")
+                .attr("font-weight", 500)
+                .style("font-size", "0.9em")
+                .call(g => g.selectAll(".domain")
+                    .attr("stroke", axisColor))
+                .call(g => g.selectAll(".tick line")
+                        .attr("stroke", axisColor));
 
             // draw lines
             svg.selectAll("myRect")
@@ -169,15 +181,21 @@ function drawTypeBarAft() {
 
             // x axis
             const x = d3.scaleLinear()
-                .domain([0, 20000])
+                .domain([0, 65000])
                 .range([0,width]);
 
             svg.append("g")
                 .attr("transform", `translate(0, ${height})`)
                 .call(d3.axisBottom(x))
+                .call(g => g.selectAll(".domain")
+                    .attr("stroke", axisColor))
+                .call(g => g.selectAll(".tick line")
+                    .attr("stroke", axisColor))
                 .selectAll("text")
                   .attr("transform", "translate(-10,0)rotate(-45)")
                   .style("text-anchor", "end")
+                  .attr("font-family", "Open Sans")
+                  .attr("font-weight", 500)
                   .style("font-size", "1.2em");
 
             // y axis
@@ -188,7 +206,13 @@ function drawTypeBarAft() {
                 
             svg.append("g")
                 .call(d3.axisLeft(y))
-                .style("font-size", "0.8em");
+                .call(g => g.selectAll(".domain")
+                    .attr("stroke", axisColor))
+                .call(g => g.selectAll(".tick line")
+                    .attr("stroke", axisColor))
+                .attr("font-family", "Open Sans")
+                .attr("font-weight", 500)
+                .style("font-size", "0.9em");
 
             // draw lines
             svg.selectAll("myRect")
@@ -236,6 +260,7 @@ function drawTypeLineToxic() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -255,6 +280,7 @@ function drawTypeLineToxic() {
         svg.append("g")
             .call(d3.axisLeft(y)
                     .ticks(5))
+            .attr("font-family", "Open Sans")
             .call(g => g.selectAll(".domain")
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
@@ -317,6 +343,7 @@ function drawTypeLineToxic() {
         .attr("x", (width / 2))             
         .attr("y", height + 45)
         .attr("text-anchor", "middle")  
+        .attr("font-family", "Open Sans")
         .style("font-size", "0.9em")
         .style("font-weight", "500")  
         .style("fill", "#333333")
@@ -357,6 +384,7 @@ function drawTypeLineInsult() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -374,6 +402,7 @@ function drawTypeLineInsult() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(5))
             .call(g => g.selectAll(".domain")
@@ -437,7 +466,8 @@ function drawTypeLineInsult() {
     svg.append("text")
         .attr("x", (width / 2))             
         .attr("y", height + 45)
-        .attr("text-anchor", "middle")  
+        .attr("text-anchor", "middle") 
+        .attr("font-family", "Open Sans") 
         .style("font-size", "0.9em")
         .style("font-weight", "500")  
         .style("fill", "#333333")
@@ -480,6 +510,7 @@ function drawBGLineGenreToxic() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -497,6 +528,7 @@ function drawBGLineGenreToxic() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(5))
             .call(g => g.selectAll(".domain")
@@ -560,6 +592,7 @@ function drawBGLineGenreToxic() {
         .attr("x", (width / 2))             
         .attr("y", height + 50)
         .attr("text-anchor", "middle")  
+        .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
         .style("font-weight", "500") 
         .style("fill", "#333333")
@@ -600,6 +633,7 @@ function drawBGLineGenreInsult() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -617,6 +651,7 @@ function drawBGLineGenreInsult() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(5))
             .call(g => g.selectAll(".domain")
@@ -680,6 +715,7 @@ function drawBGLineGenreInsult() {
         .attr("x", (width / 2))             
         .attr("y", height + 50)
         .attr("text-anchor", "middle")  
+        .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
         .style("font-weight", "500") 
         .style("fill", "#333333")
@@ -720,6 +756,7 @@ function drawBGLineSexToxic() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -737,6 +774,7 @@ function drawBGLineSexToxic() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(5))
             .call(g => g.selectAll(".domain")
@@ -800,6 +838,7 @@ function drawBGLineSexToxic() {
         .attr("x", (width / 2))             
         .attr("y", height + 50)
         .attr("text-anchor", "middle")  
+        .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
         .style("font-weight", "500") 
         .style("fill", "#333333")
@@ -840,6 +879,7 @@ function drawBGLineSexInsult() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -857,6 +897,7 @@ function drawBGLineSexInsult() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(5))
             .call(g => g.selectAll(".domain")
@@ -921,6 +962,7 @@ function drawBGLineSexInsult() {
         .attr("y", height + 50)
         .attr("text-anchor", "middle")  
         .style("font-size", "1em") 
+        .attr("font-family", "Open Sans")
         .style("font-weight", "500") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
@@ -962,6 +1004,7 @@ function drawPSLineToxicCancel() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -979,6 +1022,7 @@ function drawPSLineToxicCancel() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(6))
             .call(g => g.selectAll(".domain")
@@ -1044,6 +1088,7 @@ function drawPSLineToxicCancel() {
             .attr("y", height + 45)
             .attr("text-anchor", "middle")  
             .style("font-size", "0.9em")
+            .attr("font-family", "Open Sans")
             .style("font-weight", "500")  
             .style("fill", "#333333")
             .text("Days Since Cancellation");
@@ -1083,6 +1128,7 @@ function drawPSLineInsultCancel() {
 
         svg.append("g")
             .attr("transform", `translate(0, ${height})`)
+            .attr("font-family", "Open Sans")
             .call(d3.axisBottom(x)
                     .tickSizeOuter(0))
             .call(g => g.selectAll(".domain")
@@ -1100,6 +1146,7 @@ function drawPSLineInsultCancel() {
             .range([height, 0]);
 
         svg.append("g")
+            .attr("font-family", "Open Sans")
             .call(d3.axisLeft(y)
                     .ticks(6))
             .call(g => g.selectAll(".domain")
@@ -1164,6 +1211,7 @@ function drawPSLineInsultCancel() {
             .attr("x", (width / 2))             
             .attr("y", height + 45)
             .attr("text-anchor", "middle")  
+            .attr("font-family", "Open Sans")
             .style("font-size", "0.9em") 
             .style("font-weight", "500") 
             .style("fill", "#333333")
