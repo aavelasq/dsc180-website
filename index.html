@@ -71,6 +71,15 @@
                     the background of the musician, and the strength of the musician's parasocial relationship with their fans affected 
                     public sentiment over time. 
                 </p>
+                <div id="hypothesis-div">
+                    <h4>Our Hypothesis</h4>
+                    <hr>
+                    <h5>
+                        Online “cancel culture” on Twitter leads to an <b>overall increase in toxicity and negative sentiment</b> towards the canceled musician
+                        after their controversy first breaks out. 
+                    </h5>
+                </div>
+
                 <h2 class="sub-headers article-text">The Data</h2>
                 <p class="article-text">
                     For our analysis, we focused on three different genres of music: K-Pop, Hip-Hop, and Pop. We then selected
@@ -477,7 +486,19 @@
                 </div>
                 <h3 class="topic-headers article-text">Background of Cancelled Artist</h3>
                 <p class="article-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Outside of just being in the music industry, the individuals we chose
+                    have a lot of similarities in their background, but also have distinct differences between them. 
+                    We believe these differences may influence the severity of negative sentiment, as well as the duration of that negative sentiment after getting canceled. 
+                </p>
+                <br>
+                <p class="article-text">
+                    In order to determine whether or not the background of an artist has an effect 
+                    on the sentiment they receive after being canceled, we created two different groups 
+                    to look at. Our first group of artists is based on the genre of music they make. 
+                    The genre categories that our artists fall into are K-pop, Hip-Hop, and Western Pop. 
+                    The second group of artists is based on their sex, so comparing female artists and male artists. 
+                    The metric we used to compare artists in these groupings is determined by the number of days after 
+                    cancellation it takes for the median sentiment level to return to its pre-controversy median level.
                 </p>
                 <h3 class="topic-headers article-text">Strength of Parasocial Relationships</h3>
                 <p class="article-text">
@@ -609,8 +630,8 @@
                 <p class="article-text">
                     Looking at how the strength of each artist's parasocial relationship with their fans affects sentiment, 
                     artists with a <b>strong parasocial relationship have lower negative sentiment overall</b> compared to artists with a weak parasocial relationship.
-                    Both groups have an inital significant increase in severe toxcity and insults a few days after cancellation. However, there is another
-                    major spike after 100 days that is similar to the inital spike for artists with a weak parasocial relationship.
+                    Both groups have an initial significant increase in severe toxicity and insults a few days after cancellation. However, there is another
+                    major spike after 100 days that is similar to the initial spike for artists with a weak parasocial relationship.
                     Although there is also a spike around the 100 day mark for the strong parasocial group as well, it is not as dramatic
                     as the same initial increase of negative sentiment seen directly after cancellation unlike what we observe from the weak parasocial group.  
                 </p>
@@ -626,7 +647,7 @@
                 </div>
                 <p class="article-text"> 
                     By having a strong parasocial connection with the artist, it seems that these artists' fanbases are more likely to
-                    defend them and block out as much negativity surrounding them and their controveries as possible, 
+                    defend them and block out as much negativity surrounding them and their controversies as possible, 
                     which would explain the difference we see in overall negative sentiment between our strong and weak parasocial groups.
                 </p>
             </div>
@@ -664,12 +685,27 @@
             </p>
             <h5 class="article-text">Methods</h5>
             <p class="article-text">
+                To investigate the impact of an artist’s background on sentiment, we looked the artist’s genre and 
+                sex. After sorting the artists for the groups in each category, we calculated our sentiment 
+                attributes, severe toxicity and insult scores, over time for each artist within the group and grouped 
+                by the number of days before and after controversy. We then calculated the median severe toxicity and 
+                insult levels for each group within genre and sex over the entire period of tweets we collected. 
+                Next, we plotted out the grouped data for the categories to visualize the median indicator levels 
+                for the groups against each other. In order to quantify the effect of the chart, we calculated how 
+                many days after controversy it took until the median severe toxicity and insult levels returned to 
+                pre-controversy levels. We calculated this metric by taking the sentiment indicator level at day 0 or 
+                the day of the controversy and finding the first instance of the indicator level being below the day 0 level 
+                after the controversy has happened. We calculated this metric for each group to compare groups against each other
+                and determine if there was a difference for that background category.
+            </p>
+            <br>
+            <p class="article-text">
                 To categorize the strength of each artist's parasocial relationship with their fanbases,
                 we calculated the total mean engagement, which is the sum of each artist's mean number
                 of retweets, likes, replies, and quote tweets, of all tweets on an artist's official Twitter account 
                 tweeted within the 6 month before and after cancellation time frame. We also calculated
                 the fandom strength of each artist by summing the number of tweets that mentioned the artist's
-                fandom name from our inital artist tweet dataset then dividing that number by the total number of tweets
+                fandom name from our initial artist tweet dataset then dividing that number by the total number of tweets
                 in that dataset. Artists who reached above both metric thresholds were categorized as having a strong parasocial fanbase, 
                 while the others were categorized as weak.
             </p>

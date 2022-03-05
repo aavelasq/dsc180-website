@@ -2,7 +2,7 @@ var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
 var allBut, kpopBut, hhBut, popBut;
 var moblieDiv;
 var opacityLvl = 0.35;
-var axisColor = "#737373";
+var axisColor = "#828282";
 
 // fandom viz
 
@@ -337,7 +337,8 @@ function drawTypeLineToxic() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
+            .attr("font-family", "Open Sans")
+            .style("font-size", "0.9em");
     
     svg.append("text")
         .attr("x", (width / 2))             
@@ -461,7 +462,8 @@ function drawTypeLineInsult() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
+            .attr("font-family", "Open Sans")
+            .style("font-size", "0.9em");
 
     svg.append("text")
         .attr("x", (width / 2))             
@@ -586,6 +588,7 @@ function drawBGLineGenreToxic() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
+            .attr("font-family", "Open Sans")
             .style("font-size", "1em");
 
     svg.append("text")
@@ -709,6 +712,7 @@ function drawBGLineGenreInsult() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
+            .attr("font-family", "Open Sans")
             .style("font-size", "1em");
 
     svg.append("text")
@@ -832,6 +836,7 @@ function drawBGLineSexToxic() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
+            .attr("font-family", "Open Sans")
             .style("font-size", "1em");
 
     svg.append("text")
@@ -955,6 +960,7 @@ function drawBGLineSexInsult() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
+            .attr("font-family", "Open Sans")
             .style("font-size", "1em");
 
     svg.append("text")
@@ -1081,7 +1087,8 @@ function drawPSLineToxicCancel() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
+            .attr("font-family", "Open Sans")
+            .style("font-size", "0.9em");
     
     svg.append("text")
             .attr("x", (width / 2))             
@@ -1205,7 +1212,8 @@ function drawPSLineInsultCancel() {
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
-            .style("font-size", "1em");
+            .attr("font-family", "Open Sans")
+            .style("font-size", "0.9em");
 
     svg.append("text")
             .attr("x", (width / 2))             
@@ -1239,17 +1247,20 @@ function init() {
     hhBut.addEventListener("click", changefandomOpacityHiphop);
     popBut.addEventListener("click", changefandomOpacityPop);
 
+    // type results viz 
     drawTypeBarBef();
     drawTypeBarAft();
 
     drawTypeLineToxic();
     drawTypeLineInsult();
 
+    // bg results viz 
     drawBGLineGenreToxic();
     drawBGLineGenreInsult();
     drawBGLineSexToxic();
     drawBGLineSexInsult();
 
+    // ps results viz 
     drawPSLineToxicCancel();
     drawPSLineInsultCancel();
 }

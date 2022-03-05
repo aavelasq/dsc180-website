@@ -3,7 +3,7 @@
     --sub-bg-color: #c5d7f3;
     --name-header-color: #2f3c50;
     --font-color: rgb(51, 51, 51);
-    --results-bg-color: rgba(236, 251, 255, 0.4);
+    --results-bg-color: rgba(236, 251, 255, 0.35);
   }
 
 /* main body */
@@ -118,7 +118,7 @@ p.article-text {
     color: #173f77;
     text-align: left;
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     font-size: 2.8em;
     font-family: 'Mukta', sans-serif;
     font-weight: 700;
@@ -179,6 +179,37 @@ img#twitter-tweet-img {
     margin-right: auto;
     margin-bottom: 10px;
     border-radius: 1%;
+}
+
+div#intro div#hypothesis-div {
+    margin-top: 30px;
+    padding: 0 25%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+@media (max-width: 1000px) {
+    div#intro div#hypothesis-div {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+div#intro div#hypothesis-div h4 {
+    color: #304f7a;
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+div#intro div#hypothesis-div h5 {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+div#intro div#hypothesis-div h5 b {
+    color: #2c5092; 
 }
 
 /* visualization for intro cancelled individuals + controls  */
