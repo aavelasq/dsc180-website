@@ -98,7 +98,7 @@ function changefandomOpacityPop() {
 
 // type viz
 
-function drawTypeBar1() {
+function drawTypeBarBef() {
     // margins
     const margin = {top: 10, right: 40, bottom: 50, left: 60},
         width = 500 - margin.left - margin.right,
@@ -112,11 +112,11 @@ function drawTypeBar1() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    d3.csv("./data/fake_bar_data.csv").then(function(data) {
+    d3.csv("./data/discrim_before.csv").then(function(data) {
 
             // x axis
             const x = d3.scaleLinear()
-                .domain([0, 10000])
+                .domain([0, 65000])
                 .range([0,width]);
 
             svg.append("g")
@@ -151,7 +151,7 @@ function drawTypeBar1() {
     return svg
 }
 
-function drawTypeBar2() {
+function drawTypeBarAft() {
     // margins
     const margin = {top: 10, right: 40, bottom: 50, left: 60},
         width = 500 - margin.left - margin.right,
@@ -165,11 +165,11 @@ function drawTypeBar2() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    d3.csv("./data/fake_bar_data.csv").then(function(data) {
+    d3.csv("./data/discrim_after.csv").then(function(data) {
 
             // x axis
             const x = d3.scaleLinear()
-                .domain([0, 10000])
+                .domain([0, 20000])
                 .range([0,width]);
 
             svg.append("g")
@@ -205,7 +205,7 @@ function drawTypeBar2() {
 function drawTypeLineToxic() {
     // margins
     const margin = {top: 20, right: 40, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
+        width = 520 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
     // append svg to specified div
@@ -216,14 +216,14 @@ function drawTypeLineToxic() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const keys = ["strong", "weak"]
+    const keys = ["misinfomation", "discrimination", "assault"]
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#367d33", "#a33939"])
+            .range(["#bfa14d", "#48946c", "#4a443d"])
 
     //Read the data
-    d3.csv("./data/cancel_toxic_ps.csv", function(d){
+    d3.csv("./data/final_ti.csv", function(d){
         return {days: d.days_cancel, group: d.group, 
         severe_toxicity:d.severe_toxicity}
       },).then(function(data) {
@@ -249,12 +249,12 @@ function drawTypeLineToxic() {
 
         // y axis
         const y = d3.scaleLinear()
-            .domain([0.09, 0.26])
+            .domain([0.09, 0.35])
             .range([height, 0]);
 
         svg.append("g")
             .call(d3.axisLeft(y)
-                    .ticks(10))
+                    .ticks(5))
             .call(g => g.selectAll(".domain")
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
@@ -326,7 +326,7 @@ function drawTypeLineToxic() {
 function drawTypeLineInsult() {
     // margins
     const margin = {top: 20, right: 40, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
+        width = 520 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
     // append svg to specified div
@@ -337,14 +337,14 @@ function drawTypeLineInsult() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const keys = ["strong", "weak"]
+    const keys = ["misinfomation", "discrimination", "assault"]
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#367d33", "#a33939"])
+            .range(["#bfa14d", "#48946c", "#4a443d"])
 
     //Read the data
-    d3.csv("./data/cancel_toxic_ps.csv", function(d){
+    d3.csv("./data/final_ti.csv", function(d){
         return {days: d.days_cancel, group: d.group, 
         insult:d.insult}
       },).then(function(data) {
@@ -370,12 +370,12 @@ function drawTypeLineInsult() {
 
         // y axis
         const y = d3.scaleLinear()
-            .domain([0.09, 0.26])
+            .domain([0.09, 0.35])
             .range([height, 0]);
 
         svg.append("g")
             .call(d3.axisLeft(y)
-                    .ticks(10))
+                    .ticks(5))
             .call(g => g.selectAll(".domain")
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
@@ -460,11 +460,11 @@ function drawBGLineGenreToxic() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const keys = ["kpop", "hiphop", "pop"]
+    const keys = ["k-pop", "hip-hop", "pop"]
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#7350b5", "#7d3254", "#366da3"])
+            .range(["#f593f0", "#7d3254", "#30b1b8"])
 
     //Read the data
     d3.csv("./data/genre_toxic.csv", function(d){
@@ -580,11 +580,11 @@ function drawBGLineGenreInsult() {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const keys = ["kpop", "hiphop", "pop"]
+    const keys = ["k-pop", "hip-hop", "pop"]
 
     const colors = d3.scaleOrdinal()
             .domain(keys)
-            .range(["#7350b5", "#7d3254", "#366da3"])
+            .range(["#f593f0", "#7d3254", "#30b1b8"])
 
     //Read the data
     d3.csv("./data/genre_insult.csv", function(d){
@@ -931,7 +931,7 @@ function drawBGLineSexInsult() {
 function drawPSLineToxicCancel() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 40, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
+        width = 520 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -980,7 +980,7 @@ function drawPSLineToxicCancel() {
 
         svg.append("g")
             .call(d3.axisLeft(y)
-                    .ticks(10))
+                    .ticks(6))
             .call(g => g.selectAll(".domain")
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
@@ -1052,7 +1052,7 @@ function drawPSLineToxicCancel() {
 function drawPSLineInsultCancel() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 40, bottom: 50, left: 40},
-        width = 550 - margin.left - margin.right,
+        width = 520 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -1101,7 +1101,7 @@ function drawPSLineInsultCancel() {
 
         svg.append("g")
             .call(d3.axisLeft(y)
-                    .ticks(10))
+                    .ticks(6))
             .call(g => g.selectAll(".domain")
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
@@ -1191,8 +1191,8 @@ function init() {
     hhBut.addEventListener("click", changefandomOpacityHiphop);
     popBut.addEventListener("click", changefandomOpacityPop);
 
-    drawTypeBar1();
-    drawTypeBar2();
+    drawTypeBarBef();
+    drawTypeBarAft();
 
     drawTypeLineToxic();
     drawTypeLineInsult();

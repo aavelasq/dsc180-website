@@ -274,8 +274,8 @@
                     </div>
                 </div>
                 <p class="article-text">
-                    Our data on these 12 individuals was collected using the Twitter API, in which we ran queries for each individual
-                    that consisted of a set of hashtags and keywords that were related to the individual's cancellation, name, and fanbase. 
+                    We collected tweets on these artists using the Twitter API, where we searched for tweets containing
+                    hashtags or keywords relating to the artist's cancellation, name, and fanbase. 
                 </p>
                 <div id="intro-data-viz">
                     <div id="dataset-btn-legend">
@@ -378,9 +378,9 @@
                 <p class="article-text">
                     To measure sentiment for each artist, we utilized sentiment analysis, which is a 
                     natural language processing technique that quantifies emotions detected in a piece of text. 
-                    Because we're analyzing the change in negative or toxic sentiment over time,
-                    we calculated two scores for all of our datasets, severe toxicity and insult probability scores.  
-                    Therefore, tweets that are higher in toxicity are given higher severe toxicity and insult scores. 
+                    Because we're interested in seeing if there is a change in negative sentiment over time,
+                    we calculated two scores, severe toxicity and insult probability scores, on all our tweet data.  
+                    Tweets that are higher in toxicity or negative sentiment are given higher severe toxicity and insult scores. 
                 </p>
                 <div id="sentiment-ex">
                     <div id="pos-ex">
@@ -607,28 +607,27 @@
                 </div>
                 <h3 class="topic-headers article-text">Strength of Parasocial Relationships</h3>
                 <p class="article-text">
-                    Looking at how the strength of each artist's parasocial relationship with their fans affects overall sentiment, 
-                    artists with a <b>strong parasocial relationship tend to have lower negative sentiment</b> compared to artists with a weak parasocial relationship.
-                    Both groups have an inital spike in negative sentiment directly after cancellation. However, there is another
-                    major spike in severe toxicity and insult score after 100 days for artists with a weak parasocial relationship.
-                    On the other hand, there is a gradual drop in negative sentiment for artists with a strong parasocial relationship
-                    and although there is also a spike around the 100 day mark, it does not reach
-                    near the same initial level of negative sentiment seen after cancellation unlike for the weak parasocial group.  
+                    Looking at how the strength of each artist's parasocial relationship with their fans affects sentiment, 
+                    artists with a <b>strong parasocial relationship have lower negative sentiment overall</b> compared to artists with a weak parasocial relationship.
+                    Both groups have an inital significant increase in severe toxcity and insults a few days after cancellation. However, there is another
+                    major spike after 100 days that is similar to the inital spike for artists with a weak parasocial relationship.
+                    Although there is also a spike around the 100 day mark for the strong parasocial group as well, it is not as dramatic
+                    as the same initial increase of negative sentiment seen directly after cancellation unlike what we observe from the weak parasocial group.  
                 </p>
                 <div id="ps-plot-viz" class="chart-container">
                     <div id="ps-charts">
                         <div id="ps-toxic-cancel" class="ps-line">
-                            <h6 class="viz-headers">Change in Median Severe Toxicity Score By Parasocial Strength</h6>
+                            <h6 class="viz-headers">Change in Median Severe Toxicity Score <br>By Parasocial Strength</h6>
                         </div>
                         <div id="ps-insult-cancel" class="ps-line">
-                            <h6 class="viz-headers">Change in Median Insult Score By Parasocial Strength</h6>
+                            <h6 class="viz-headers">Change in Median Insult Score <br>By Parasocial Strength</h6>
                         </div>
                     </div>
                 </div>
                 <p class="article-text"> 
-                    By having a strong parasocial connection with the artist, these artists' fanbases are more likely to feel
-                    inclined to defend them and block out as much negativity surrounding them and their controveries as possible, 
-                    leading to the difference we see in overall negative sentiment between our strong and weak parasocial groups.
+                    By having a strong parasocial connection with the artist, it seems that these artists' fanbases are more likely to
+                    defend them and block out as much negativity surrounding them and their controveries as possible, 
+                    which would explain the difference we see in overall negative sentiment between our strong and weak parasocial groups.
                 </p>
             </div>
             <div id="conclusion">
