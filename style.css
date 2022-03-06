@@ -665,7 +665,7 @@ div#bg-table-viz div#sex-tables {
 
 div#bg-table-viz div.bg-table {
     padding: 0 10px;
-    width: 450px;
+    min-width: 35%;
 }
 
 div#bg-table-viz div.left-bg-table {
@@ -708,7 +708,7 @@ div#bg-plot-viz > * {
 div#bg-charts div.bg-lines {
     background-color: var(--results-bg-color);
     width: auto;
-    padding-left: 20px;
+    padding-left: 25px;
     border: 1px solid rgb(187, 196, 221);
     text-align: center;
 }

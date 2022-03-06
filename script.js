@@ -308,7 +308,7 @@ function drawTypeLineToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -346,7 +346,7 @@ function drawTypeLineToxic() {
         .attr("text-anchor", "middle")  
         .attr("font-family", "Open Sans")
         .style("font-size", "0.9em")
-        .style("font-weight", "500")  
+        .style("font-weight", "600") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -433,7 +433,7 @@ function drawTypeLineInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -471,7 +471,7 @@ function drawTypeLineInsult() {
         .attr("text-anchor", "middle") 
         .attr("font-family", "Open Sans") 
         .style("font-size", "0.9em")
-        .style("font-weight", "500")  
+        .style("font-weight", "600")  
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -481,7 +481,7 @@ function drawTypeLineInsult() {
 function drawBGLineGenreToxic() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 50, bottom: 60, left: 50},
-        width = 750 - margin.left - margin.right,
+        width = 720 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -559,7 +559,7 @@ function drawBGLineGenreToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -597,7 +597,7 @@ function drawBGLineGenreToxic() {
         .attr("text-anchor", "middle")  
         .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
-        .style("font-weight", "500") 
+        .style("font-weight", "600") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -605,7 +605,7 @@ function drawBGLineGenreToxic() {
 function drawBGLineGenreInsult() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 50, bottom: 60, left: 50},
-        width = 750 - margin.left - margin.right,
+        width = 720 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -683,7 +683,7 @@ function drawBGLineGenreInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -721,7 +721,7 @@ function drawBGLineGenreInsult() {
         .attr("text-anchor", "middle")  
         .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
-        .style("font-weight", "500") 
+        .style("font-weight", "600") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -729,7 +729,7 @@ function drawBGLineGenreInsult() {
 function drawBGLineSexToxic() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 50, bottom: 60, left: 50},
-        width = 750 - margin.left - margin.right,
+        width = 720 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -807,7 +807,7 @@ function drawBGLineSexToxic() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -845,7 +845,7 @@ function drawBGLineSexToxic() {
         .attr("text-anchor", "middle")  
         .attr("font-family", "Open Sans")
         .style("font-size", "1em") 
-        .style("font-weight", "500") 
+        .style("font-weight", "600") 
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -853,7 +853,7 @@ function drawBGLineSexToxic() {
 function drawBGLineSexInsult() {
     // set the dimensions and margins of the graph
     const margin = {top: 20, right: 50, bottom: 60, left: 50},
-        width = 750 - margin.left - margin.right,
+        width = 720 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -931,7 +931,7 @@ function drawBGLineSexInsult() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -969,7 +969,7 @@ function drawBGLineSexInsult() {
         .attr("text-anchor", "middle")  
         .style("font-size", "1em") 
         .attr("font-family", "Open Sans")
-        .style("font-weight", "500") 
+        .style("font-weight", "600")  
         .style("fill", "#333333")
         .text("Days Since Cancellation");
 }
@@ -1058,7 +1058,7 @@ function drawPSLineToxicCancel() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -1096,7 +1096,7 @@ function drawPSLineToxicCancel() {
             .attr("text-anchor", "middle")  
             .style("font-size", "0.9em")
             .attr("font-family", "Open Sans")
-            .style("font-weight", "500")  
+            .style("font-weight", "600")  
             .style("fill", "#333333")
             .text("Days Since Cancellation");
 }
@@ -1183,7 +1183,7 @@ function drawPSLineInsultCancel() {
         svg.append("line")
             .join("path")
                 .attr("fill", "none")
-                .attr('stroke', axisColor)
+                .attr('stroke', "red")
                 .attr("stroke-width", 1.2)
                 .attr('x1', width / 2)
                 .attr('y1', 0)
@@ -1221,7 +1221,7 @@ function drawPSLineInsultCancel() {
             .attr("text-anchor", "middle")  
             .attr("font-family", "Open Sans")
             .style("font-size", "0.9em") 
-            .style("font-weight", "500") 
+            .style("font-weight", "600") 
             .style("fill", "#333333")
             .text("Days Since Cancellation");
 }
