@@ -110,7 +110,7 @@ p.article-text {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
     color: rgb(56, 56, 56);
-    font-size: 1.15em;
+    font-size: 1.1em;
     line-height: 1.7;
 }
 
@@ -651,6 +651,7 @@ div#type-line-charts .type-line {
 div#bg-table-viz {
     padding: 30px 0;
     justify-content: center;
+    font-family: "Open Sans", sans-serif;
 }
 
 div#bg-table-viz div#genre-tables {
