@@ -599,8 +599,122 @@
                 </div>
                 <h3 class="topic-headers article-text">Background of Cancelled Artist</h3>
                 <p class="article-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. Eu ultrices vitae auctor eu.
+                    Comparing different genres to each other, Hip-Hop stands out. For both severe toxicity 
+                    and insult level tables, Hip-Hop artists’ sentiment levels took the longest to return back 
+                    to normal or pre-controversy levels compared to K-Pop and Pop artists. The results for grouping 
+                    by sex show that canceled male artists experience a much longer effect from cancelling. 
+                    In terms of duration, canceled male artists experience a rise in severe toxicity for more 
+                    than three times longer than female artists. For insult levels, the duration is more than 
+                    four times longer for canceled male artists.
                 </p>
+                <div id="bg-table-viz">
+                    <div id="genre-tables">
+                        <div id="genre-toxic-tab" class="left-bg-table bg-table">
+                            <h6 class="viz-headers">Median Severe Toxicity By Genre</h6>
+                            <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">K-Pop</th>
+                                    <th scope="col">Hip-Hop</th>
+                                    <th scope="col">Pop</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Days After Controversy</td>
+                                        <td>26</td>
+                                        <td>35</td>
+                                        <td>18</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Levels</td>
+                                        <td>0.15</td>
+                                        <td>0.17</td>
+                                        <td>0.22</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> 
+                        <div id="genre-insult-tab" class="right-bg-table bg-table">
+                            <h6 class="viz-headers">Median Insult By Genre</h6>
+                            <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">K-Pop</th>
+                                    <th scope="col">Hip-Hop</th>
+                                    <th scope="col">Pop</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Days After Controversy</td>
+                                        <td>18</td>
+                                        <td>30</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Levels</td>
+                                        <td>0.12</td>
+                                        <td>0.14</td>
+                                        <td>0.18</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="sex-tables">
+                        <div id="sex-toxic-tab" class="left-bg-table bg-table">
+                            <h6 class="viz-headers">Median Severe Toxicity By Sex</h6>
+                            <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Male</th>
+                                    <th scope="col">Female</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Days After Controversy</td>
+                                        <td>71</td>
+                                        <td>18</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Levels</td>
+                                        <td>0.11</td>
+                                        <td>0.19</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="sex-insult-tab" class="right-bg-table bg-table">
+                            <h6 class="viz-headers">Median Insult By Sex</h6>
+                            <table id="canceled-artists" class="table table-sm table-bordered table-responsive">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Male</th>
+                                    <th scope="col">Female</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Days After Controversy</td>
+                                        <td>71</td>
+                                        <td>13</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Levels</td>
+                                        <td>0.13</td>
+                                        <td>0.24</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <div id="bg-plot-viz" class="chart-container">
                     <div id="bg-charts">
                         <div id="bg-genre" class="bg-lines">
@@ -622,7 +736,13 @@
                     </div>
                     <figure class="sticky">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris. <br><br> Eu ultrices vitae auctor eu. Feugiat sed lectus vestibulum mattis. Diam sit amet nisl suscipit. Leo vel orci porta non pulvinar neque laoreet. Aliquet lectus proin nibh nisl condimentum. Integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui nunc. Placerat in egestas erat imperdiet. At risus viverra adipiscing at in. Ornare massa eget egestas purus viverra accumsan.
+                            The plots comparing genres show that Hip-Hop artists experience the most drastic change in toxic sentiment for severe toxicity and insult. 
+                            The median negative sentiment for Hip-Hop artists seems to be the lowest 
+                            compared to K-Pop and Pop before controversy but it rises to the highest median levels immediately after controversy. 
+                            <br>
+                            <br>
+                            When comparing sex, female artists experience a more drastic rise in severe toxicity and insult after their controversies. 
+                            Female artists also have greater median severe toxicity and insult levels before and after cancellation compared to canceled male artists. 
                         </p>
                     </figure>
                 </div>
