@@ -94,10 +94,18 @@ nav#nav_bar {
     font-weight: 400;
 }
 
+nav#nav_bar a {
+    color: rgb(214, 214, 214);
+}
+
 nav#nav_bar a:hover {
-    color: rgb(183, 208, 255);
+    color: rgb(177, 198, 241);
     font-weight: 600;
     transition: 0.5s;
+}
+
+nav#nav_bar li.nav-item {
+    padding-right: 40px;
 }
 
 body div#main {
@@ -142,7 +150,7 @@ p.article-text {
 }
 
 .topic-headers {
-    color: #4b76b1;
+    color: #43699e;
     font-family: 'Mukta', sans-serif;
     font-size: 2em;
     font-weight: 600;
@@ -817,11 +825,12 @@ div#methodology a {
 }
 
 div#methodology a:hover {
-    color: white;
+    color: rgb(173, 225, 255);
 }
 
 div#methodology h4 {
     color: rgb(190, 205, 233);
+    font-size: 2em;
 }
 
 div#methodology h5 {
