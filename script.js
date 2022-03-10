@@ -2,6 +2,7 @@ var fandom_list_kpop, fandom_list_hh, fandom_list_pop;
 var allBut, kpopBut, hhBut, popBut;
 var moblieDiv;
 var opacityLvl = 0.35;
+var lineOpacity = 0.12;
 var axisColor = "#828282";
 
 // fandom viz
@@ -149,10 +150,10 @@ function drawTypeBarBef() {
                 .call(g => g.selectAll(".tick line")
                         .attr("stroke", axisColor));
 
-            // draw lines
+            // draw bars
             svg.selectAll("myRect")
                 .data(data)
-                    .join("rect")
+                .join("rect")
                     .attr("x", x(0) )
                     .attr("y", d => y(d.word))
                     .attr("width", d => x(d.value))
@@ -214,7 +215,7 @@ function drawTypeBarAft() {
                 .attr("font-weight", 500)
                 .style("font-size", "0.9em");
 
-            // draw lines
+            // draw bars
             svg.selectAll("myRect")
                 .data(data)
                     .join("rect")
@@ -267,6 +268,7 @@ function drawTypeLineToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -285,9 +287,18 @@ function drawTypeLineToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -322,7 +333,7 @@ function drawTypeLineToxic() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 15 + i*25}) 
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -332,12 +343,13 @@ function drawTypeLineToxic() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 15 + i*25}) 
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "0.9em");
     
     svg.append("text")
@@ -392,6 +404,7 @@ function drawTypeLineInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -410,9 +423,18 @@ function drawTypeLineInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+        
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -447,7 +469,7 @@ function drawTypeLineInsult() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 15 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -457,12 +479,13 @@ function drawTypeLineInsult() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 15 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "0.9em");
 
     svg.append("text")
@@ -519,6 +542,7 @@ function drawBGLineGenreToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -537,9 +561,18 @@ function drawBGLineGenreToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+        
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -573,7 +606,7 @@ function drawBGLineGenreToxic() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -583,12 +616,13 @@ function drawBGLineGenreToxic() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "1em");
 
     svg.append("text")
@@ -643,6 +677,7 @@ function drawBGLineGenreInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -661,9 +696,18 @@ function drawBGLineGenreInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+        
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -697,7 +741,7 @@ function drawBGLineGenreInsult() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -707,12 +751,13 @@ function drawBGLineGenreInsult() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "1em");
 
     svg.append("text")
@@ -767,6 +812,7 @@ function drawBGLineSexToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -785,9 +831,18 @@ function drawBGLineSexToxic() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke",axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+                
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -821,7 +876,7 @@ function drawBGLineSexToxic() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -831,12 +886,13 @@ function drawBGLineSexToxic() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 22 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "1em");
 
     svg.append("text")
@@ -891,6 +947,7 @@ function drawBGLineSexInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -909,9 +966,18 @@ function drawBGLineSexInsult() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill",axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+        
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -945,7 +1011,7 @@ function drawBGLineSexInsult() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 23 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -955,12 +1021,13 @@ function drawBGLineSexInsult() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 23 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "1em");
 
     svg.append("text")
@@ -1017,6 +1084,7 @@ function drawPSLineToxicCancel() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -1024,7 +1092,7 @@ function drawPSLineToxicCancel() {
 
         // y axis
         const y = d3.scaleLinear()
-            .domain([0.09, 0.26])
+            .domain([0.08, 0.3])
             .range([height, 0]);
 
         svg.append("g")
@@ -1035,9 +1103,18 @@ function drawPSLineToxicCancel() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+                
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -1072,7 +1149,7 @@ function drawPSLineToxicCancel() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -1082,12 +1159,13 @@ function drawPSLineToxicCancel() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "0.9em");
     
     svg.append("text")
@@ -1142,6 +1220,7 @@ function drawPSLineInsultCancel() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .attr("y", "12")
@@ -1149,7 +1228,7 @@ function drawPSLineInsultCancel() {
 
         // y axis
         const y = d3.scaleLinear()
-            .domain([0.09, 0.26])
+            .domain([0.08, 0.3])
             .range([height, 0]);
 
         svg.append("g")
@@ -1160,9 +1239,18 @@ function drawPSLineInsultCancel() {
                     .attr("stroke", axisColor))
             .call(g => g.selectAll(".tick line")
                     .attr("stroke", axisColor))
+                    .attr("stroke-width", 1.5)
             .call(g => g.selectAll(".tick text")
                     .attr("fill", axisColor)
                     .style("font-size", "1.3em"));
+
+        const yAxisGrid = d3.axisLeft(y).tickSize(-width)
+            .tickFormat('').ticks(6);
+                
+        svg.append('g')
+            .attr('class', 'y axis-grid')
+            .attr("opacity", lineOpacity)
+            .call(yAxisGrid);
 
         // draw lines
         svg.selectAll(".line")
@@ -1197,7 +1285,7 @@ function drawPSLineInsultCancel() {
         .enter()
         .append("circle")
             .attr("cx", 20)
-            .attr("cy", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 5)
             .style("fill", function(d){ return colors(d)})
 
@@ -1207,12 +1295,13 @@ function drawPSLineInsultCancel() {
         .enter()
         .append("text")
             .attr("x", 35)
-            .attr("y", function(d,i){ return 0 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return 20 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d){ return colors(d)})
             .text(function(d){ return d})
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
             .attr("font-family", "Open Sans")
+            .attr("font-weight", 500)
             .style("font-size", "0.9em");
 
     svg.append("text")

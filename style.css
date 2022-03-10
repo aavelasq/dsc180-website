@@ -1,9 +1,9 @@
 :root {
     --main-bg-color: #e7f0fc;
-    --sub-bg-color: #c5d7f3;
+    --sub-bg-color: #bfd1ec;
     --name-header-color: #2f3c50;
     --font-color: rgb(51, 51, 51);
-    --results-bg-color: rgba(236, 251, 255, 0.35);
+    --results-bg-color: rgba(238, 251, 255, 0.2);
   }
 
 /* main body */
@@ -43,6 +43,7 @@ div#header #subtitle-header {
     font-size: 1.4vw;
     color: white;
     font-family: "Open Sans", sans-serif;
+    padding-bottom: 15px;
 }
 
 div#header #authors {
@@ -99,9 +100,10 @@ nav#nav_bar a {
 }
 
 nav#nav_bar a:hover {
-    color: rgb(177, 198, 241);
+    color: rgb(197, 216, 255);
     font-weight: 600;
-    transition: 0.5s;
+    transition: 0.2s;
+    border-bottom: 2px solid rgb(197, 216, 255);
 }
 
 nav#nav_bar li.nav-item {
@@ -183,7 +185,7 @@ a {
 
 a:hover {
     color: rgb(67, 93, 117);
-    font-weight: 400;
+    font-weight: 600;
 }
 
 /* tweet example img */
@@ -384,6 +386,7 @@ div#intro-data-viz tr:hover {
 div#intro-data-viz td.artists {
     font-size: 1em;
     width: 15%;
+    font-weight: 500;
 }
 
 div#intro-data-viz td.tweet-num {
@@ -707,6 +710,10 @@ div#bg-table-viz div.bg-table table {
 
 div#bg-table-viz div.bg-table tr:hover {
     background-color: var(--sub-bg-color);
+}
+
+div#bg-table-viz div.bg-table td.label {
+    font-weight: 500;
 }
 
 div#bg-plot-viz {
