@@ -777,7 +777,7 @@ figure.sticky {
 figure.sticky p {
     padding: 15px;
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -838,6 +838,7 @@ div#methodology a:hover {
 div#methodology h4 {
     color: rgb(190, 205, 233);
     font-size: 2em;
+    padding-bottom: 10px;
 }
 
 div#methodology h5 {
@@ -847,6 +848,11 @@ div#methodology h5 {
 }
 
 div#methodology p {
+    font-size: 1em;
+    color: white;
+}
+
+div#methodology ul {
     font-size: 1em;
     color: white;
 }
